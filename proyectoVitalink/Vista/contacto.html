@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="shortcut icon" href="./media/favicon_IA_Medica.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <script src="../JS/formContacto.js"></script>
+    <script src="../JS/menuToggle.js"></script>
+</head>
+<body>
+    <section>
+        <header>
+            <section class="section_header">
+                <picture>
+                    <img src="./media/logo_IA_Medica-blanco.svg" alt="logotipo VitaLink">
+                </picture>
+        
+                <!-- Botón de menú hamburguesa -->
+                <section class="section_nav">
+                    <div class="menu-toggle" id="menu-toggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <nav class="nav-cabecera">
+                        <ul class="nav-links" id="nav-links">
+                            <li><a href="../index.html" class="menu">Inicio</a></li>
+                            <li><a href="./serviciosCliente.html" class="menu">Servicios Cliente</a></li>
+                            <li><a href="./serviciosEmpresa.html" class="menu">Servicios Empresa</a></li>
+                            <li><a href="#" class="menu">Documentación</a></li>
+                            <li><a href="./contacto.html" class="menu">Contacto</a></li>
+                        </ul>
+                    </nav>
+                </section>
+        
+                <section class="section_user">
+                    <picture><img src="./media/icons/user-rounded-icon.svg" alt="icon user"></picture>
+                    <a href="./inicioSesion.html">Inicio Sesión</a>
+                </section>
+            </section>
+        </header>
+     
+    
+        <main>
+            <section class="section_main">
+                <section class="section_form">
+                    <form action="formContacto.js" method="get" id="formulario">
+                        <p>
+                            <label for="nombre">Nombre:*</label>
+                            <input type="text" name="nombre" id="nombre" required>
+                        </p>
+                        <p>
+                            <label for="correo">Correo Electrónico:*</label>
+                            <input type="email" name="correo" id="correo" required>
+                        </p>
+                        <p>
+                            <label for="movil">Teléfono:</label>
+                            <input type="tel" name="movil" id="telefono">
+                        </p>
+                        <p>
+                            <button type="submit" id="btn-submit">Enviar</button>
+                        </p>
+                    </form>
+                    <picture><img src="../Vista/media/img/form_isometric-design-of-a-customer-service-center.svg" alt="customer service center"></picture>
+                </section>
+            </section>
+        </main>
+
+        <footer>
+            <section class="section_footer">
+                <picture><img src="./media/logo_IA_Medica-blanco.svg" alt="logotipo VitaLink"></picture>
+                <section class="section_nav_footer">
+                    <nav>
+                        <ul>
+                            <li><a href="../index.html" itemprop="url">Inicio</a></li>
+                            <li><a href="./serviciosEmpresa.html" itemprop="url">Servicios Clientes</a></li>
+                            <li><a href="./serviciosCliente.html" itemprop="url">Servicios Empresas</a></li>
+                            <li><a href="#" itemprop="url">Documentación</a></li>
+                            <li><a href="./contacto.html" itemprop="url">Contacto</a></li>
+                        </ul>
+                    </nav>
+                </section>
+                <section class="section_nav_politics">
+                    <nav>
+                        <ul>
+                            <li><a href="#">Políticas Privacidad</a></li>
+                            <li><a href="./terminoCondiciones.html">Políticas de uso</a></li>
+                            <li><a href="#">Politicas de cookies</a></li>
+                            <li><a href="#">Base legal</a></li>
+                        </ul>
+                    </nav>
+                </section>
+            </section>
+        </footer>
+    </section>
+</body>
+</html>

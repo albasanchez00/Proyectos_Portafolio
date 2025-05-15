@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histoal de Usuario</title>
+    <link rel="shortcut icon" href="./media/favicon_IA_Medica.ico" type="image/x-icon">
+    <meta name="description" content="Panel de usuario con estadísticas, recordatorios y gestión médica para mejorar el seguimiento de tratamientos.">
+    <link rel="stylesheet" href="../CSS/style2.css">
+    <script src="../JS/panelUsuario.js"></script>
+    <script src="../JS/asistente.js"></script>
+    <script src="../JS/menuToggle.js"></script>
+</head>
+<body>
+    <section class="contenedor">
+        <header>
+            <section class="section_header">
+                <picture>
+                    <img src="./media/logo_IA_Medica-blanco.svg" alt="logotipo VitaLink">
+                </picture>
+                
+                <section class="section_nav">
+                    <div class="menu-toggle" id="menu-toggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <nav class="nav-cabecera">
+                        <ul class="nav-links" id="nav-links">
+                            <li><a href="../index.html" class="menu">Inicio</a></li>
+                            <li><a href="./serviciosCliente.html" class="menu">Servicios Cliente</a></li>
+                            <li><a href="./serviciosEmpresa.html" class="menu">Servicios Empresa</a></li>
+                            <li><a href="#" class="menu">Documentación</a></li>
+                            <li><a href="./contacto.html" class="menu">Contacto</a></li>
+                        </ul>
+                    </nav>
+                </section>
+                
+                <section class="section_user">
+                    <picture><img src="./media/icons/user-rounded-icon.svg" alt="icon user"></picture>
+                    <a href="./inicioSesion.html">Inicio Sesión</a>
+                </section>
+            </section>
+        </header>
+        
+        <main id="panel-historialMedico">
+            <div class="historial-movil">
+                <div class="registro">
+                  <p><strong>Fecha:</strong> 2025-03-15</p>
+                  <p><strong>Motivo:</strong> Dolor abdominal</p>
+                  <p><strong>Diagnóstico:</strong> Gastritis aguda</p>
+                  <p><strong>Tratamiento:</strong> Omeprazol 20mg/día</p>
+                  <p><strong>Notas:</strong> Revisar en 2 semanas</p>
+                </div>
+                <!-- Puedes repetir más registros aquí -->
+              </div>
+              
+            <article class="historial-container">
+    
+                <div class="filtro">
+                    <label for="fecha">Filtrar por fecha:</label>
+                    <input type="date" id="fecha" name="fecha">
+                    <button onclick="filtrarHistorial()">Filtrar</button>
+                </div>
+    
+                <table class="historial-tabla">
+                    <thead>
+                        <tr>
+                            <th>Fecha</th>
+                            <th>Motivo / Consulta</th>
+                            <th>Diagnóstico</th>
+                            <th>Tratamiento</th>
+                            <th>Notas del Profesional</th>
+                        </tr>
+                    </thead>
+                    <tbody id="historial-body">
+                        <tr>
+                            <td>2025-03-15</td>
+                            <td>Dolor abdominal</td>
+                            <td>Gastritis aguda</td>
+                            <td>Omeprazol 20mg/día</td>
+                            <td>Revisar en 2 semanas</td>
+                        </tr>
+                        <!-- Más registros aquí -->
+                    </tbody>
+                </table>
+    
+            </article>
+        </main>
+        
+        <footer itemscope itemtype="https://schema.org/WPFooter">
+            <section class="section_footer">
+                <picture><img src="./media/logo_IA_Medica-blanco.svg" alt="logotipo VitaLink"></picture>
+                <section class="section_nav">
+                    <nav>
+                        <ul>
+                            <li><a href="../index.html" itemprop="url">Inicio</a></li>
+                            <li><a href="./serviciosEmpresa.html" itemprop="url">Servicios Clientes</a></li>
+                            <li><a href="./serviciosCliente.html" itemprop="url">Servicios Empresas</a></li>
+                            <li><a href="#" itemprop="url">Documentación</a></li>
+                            <li><a href="./contacto.html" itemprop="url">Contacto</a></li>
+                        </ul>
+                    </nav>
+                </section>
+                <section class="section_nav_politics">
+                    <nav>
+                        <ul>
+                            <li><a href="#" itemprop="url">Políticas de Privacidad</a></li>
+                            <li><a href="./terminoCondiciones.html" itemprop="url">Políticas de Uso</a></li>
+                            <li><a href="#" itemprop="url">Políticas de Cookies</a></li>
+                            <li><a href="#" itemprop="url">Base Legal</a></li>
+                        </ul>
+                    </nav>
+                </section>
+            </section>
+        </footer>
+    </section>
+</body>
+</html>

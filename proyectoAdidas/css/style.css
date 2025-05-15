@@ -1,0 +1,349 @@
+/* Estilos Generales */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    font-family: Arial;
+}
+
+body {
+    font-size: 16px;
+    width: 100vw;
+}
+
+.textoCentrado{
+    text-align: center;
+}
+
+/*Bloque Menu*/
+.img{
+    display: block;
+    width: 120px;
+    height: auto;
+    padding-right: 40px;
+}
+#mujer,#hombre,#infantil,#calzado{
+    width: 100%;
+    height: 700px;
+}
+
+.menu{
+    background-color: black;
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+.menu a, .header a{
+    text-decoration: none;
+    color: white;
+}
+.header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 80px;
+}
+.header a{
+    color: black;
+    text-decoration: none;
+}
+
+.icono{
+    background-color: black;
+    padding: 10px 12px;
+    border: 0;
+    border-radius: 50%;
+}
+.header .fondo{
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding-right: 15px;
+}
+
+.iconos-header{
+    display: flex;
+    gap: 5px;
+}
+
+
+
+/*  Estilo de la Página de Login*/
+.container{
+    width: 35%;
+    padding: 16px;
+    margin: 10% auto;
+    border: 1px solid black;
+}
+#container-inicio{
+    display: flex;
+}
+.formularios{
+    display: block;
+}
+
+.container-2    {
+    width: 35%;
+    padding: 16px;
+    margin: 10% auto;
+    border: 1px solid black;
+}
+
+input[type="text"],input[type="password"], input[type="tel"]{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+
+}
+
+
+/* Estilo de las fotos de la Home -> Galeria */
+div.galeria{
+    border:1px solid #cccccc;
+}
+div.galeria:hover{
+    border: 1px solid #777;
+}
+div.galeria img,div.galeria video{
+    width: 100%;
+    height: auto;
+}
+div.descripcion{
+    font-size: 20px;
+    padding: 15px;
+    text-align: center;
+}
+.responsive{
+    padding: 0 6px;
+    float: left;
+    width: 25%;
+}
+.galeria-item{
+    width: 600px;
+    height: 400px;
+}
+
+.cantidad{
+    text-align: center;
+}
+input[type="number"]{
+    width: 15%;
+}
+.boton{
+    background-color: black;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border:none;
+    cursor: pointer;
+    width: 50%;
+}
+form{
+    text-align: center;
+}
+
+.video{
+    width: 100%;
+}
+
+.titulo_secc{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    text-align: center;
+    height: 100px;
+    margin-top: 20px;
+    background-color: black;
+    color: white;
+}
+
+
+/* Finalizar Pedido */
+.bloque-general{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: calc(100vh - 200px);
+}
+.bloque-img{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 25%;
+}
+.img3{
+    width: 300px;
+}
+.img2{
+    margin: 25px;
+    width: 400px;
+    height: auto;
+}
+.bloque-Form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 45%;
+}
+.bloque-Form h1{
+    padding: 10px;
+    margin: 5px;
+}
+.bloque-Form form p{
+    margin: 10px 10px;
+}
+
+.form-pedido{
+    width: 600px;
+    margin: 10px;
+    border: 1px solid black;
+}
+
+.form-pedido p{
+    margin: 10px 10px;
+}
+
+.btn-volver,.btn-carrito{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid grey;
+    box-sizing: border-box;
+    height: 25px;
+    padding: 1px;
+    margin: 10px 10px;
+    font-size: 14px;
+    text-decoration: none;
+    background-color: #F0F0F0;
+    color: black;
+    width: 150px;
+}
+
+.btn-datos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 10px;
+}
+
+
+
+/* Mostrar Carrito */
+table{
+    border: 1px solid black;
+}
+table td{
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    padding: 10px;
+}
+table tr{
+    text-align: center;
+    height: 50px;
+}
+
+.cesta{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btn-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+
+}
+
+.btn-eliminar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid grey;
+    box-sizing: border-box;
+    height: 25px;
+    padding: 1px;
+    margin: 10px 0;
+    font-size: 14px;
+    text-decoration: none;
+    background-color: #ff0000;
+    font-weight: bold;
+    color: black;
+}
+
+.cesta h2{
+    padding: 15px;
+}
+
+.cesta a{
+    width: 150px;
+    margin: 15px 15px;
+}
+
+.cesta div{
+    display: flex;
+    padding: 10px;
+
+}
+
+/*Codigo Login*/
+/*.bloque_Form{*/
+/*    width: 100%;*/
+/*}*/
+
+/*.bloque_log{*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    width: 100%;*/
+/*    height: 50px;*/
+/*    padding: 5px;*/
+/*}*/
+
+/*.bloque_log input{*/
+/*    width: 200px;*/
+/*    height: 30px;*/
+/*}*/
+
+/*#botonEnviar, #botonBorrar{*/
+/*    width: 65px;*/
+/*    height: 30px;*/
+/*    background-color: saddlebrown;*/
+/*    color: white;*/
+/*}*/
+
+/*section{*/
+/*    width: 100%;*/
+/*    height: 100vh;*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*}*/
+
+/*section div{*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    width: 500px;*/
+/*    height: 300px;*/
+/*    border: 1px solid black;*/
+/*    background-color: bisque;*/
+/*}*/
+
+
+

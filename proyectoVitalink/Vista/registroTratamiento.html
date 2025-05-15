@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro Tratamientos</title>
+    <link rel="shortcut icon" href="./media/favicon_IA_Medica.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../CSS/style2.css">
+    <script src="../JS/tratamientos.js"></script>
+    <script src="../JS/menuToggle.js"></script>
+</head>
+<body>
+    <section class="contenedor">
+        <header>
+            <section class="section_header">
+                <picture>
+                    <img src="./media/logo_IA_Medica-blanco.svg" alt="logotipo VitaLink">
+                </picture>
+                
+                <section class="section_nav">
+                    <div class="menu-toggle" id="menu-toggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <nav class="nav-cabecera">
+                        <ul class="nav-links" id="nav-links">
+                            <li><a href="../index.html" class="menu">Inicio</a></li>
+                            <li><a href="./serviciosCliente.html" class="menu">Servicios Cliente</a></li>
+                            <li><a href="./serviciosEmpresa.html" class="menu">Servicios Empresa</a></li>
+                            <li><a href="#" class="menu">Documentación</a></li>
+                            <li><a href="./contacto.html" class="menu">Contacto</a></li>
+                        </ul>
+                    </nav>
+                </section>
+                
+                <section class="section_user">
+                    <picture><img src="./media/icons/user-rounded-icon.svg" alt="icon user"></picture>
+                    <a href="./inicioSesion.html">Inicio Sesión</a>
+                </section>
+            </section>
+        </header>
+        <main id="main-tratamientos">
+            <section class="section-tratamientos">
+              <form id="formulario-tratamientos">
+                <h2>Nuevo Tratamiento</h2>
+        
+                <label for="nombre_tratamiento">Nombre del tratamiento:</label>
+                <input type="text" id="nombre_tratamiento" required>
+        
+                <label for="nombre_medicamento">Medicamento:</label>
+                <input type="text" id="nombre_medicamento" required>
+        
+                <label for="forma_farmaceutica">Forma farmacéutica:</label>
+                <select id="forma_farmaceutica">
+                  <option value="tableta">Tableta</option>
+                  <option value="jarabe">Jarabe</option>
+                  <option value="inyectable">Inyectable</option>
+                </select>
+        
+                <label for="dosis">Dosis (ej. 500mg):</label>
+                <input type="text" id="dosis" required>
+        
+                <label for="frecuencia">Frecuencia:</label>
+                <input type="text" id="frecuencia" placeholder="ej. Cada 8h, 1 vez al día">
+        
+                <label for="horarios">Horas de toma:</label>
+                <input type="time" id="hora1">
+                <input type="time" id="hora2">
+                <input type="time" id="hora3">
+        
+                <label for="duracion">Duración (días):</label>
+                <input type="number" id="duracion" min="1" required>
+        
+                <label for="inicio">Fecha de inicio:</label>
+                <input type="date" id="inicio" required>
+        
+                <label class="lb-checkbox"><input type="checkbox" id="con_alimentos"> Tomar con alimentos</label>
+        
+                <label for="observaciones">Observaciones:</label>
+                <textarea id="observaciones"></textarea>
+        
+                <label for="estado">Estado:</label>
+                <select id="estado">
+                  <option value="activo">Activo</option>
+                  <option value="finalizado">Finalizado</option>
+                </select>
+        
+                <label for="relacion_sintomas">Síntomas o diagnóstico relacionado:</label>
+                <input type="text" id="relacion_sintomas" placeholder="ej. Presión alta, dolor de cabeza">
+        
+                <button type="submit">Guardar tratamiento</button>
+              </form>
+
+              <section class="tratamiento-Registrado">
+                <h2 class="text_center">Tratamientos Registrados</h2>
+                <ul id="tratamientos-activos"></ul>
+              </section>
+            </section>
+          </main>
+    
+          <footer itemscope itemtype="https://schema.org/WPFooter">
+            <section class="section_footer">
+                <picture><img src="./media/logo_IA_Medica-blanco.svg" alt="logotipo VitaLink"></picture>
+                <section class="section_nav">
+                    <nav>
+                        <ul>
+                            <li><a href="../index.html" itemprop="url">Inicio</a></li>
+                            <li><a href="./serviciosEmpresa.html" itemprop="url">Servicios Clientes</a></li>
+                            <li><a href="./serviciosCliente.html" itemprop="url">Servicios Empresas</a></li>
+                            <li><a href="#" itemprop="url">Documentación</a></li>
+                            <li><a href="./contacto.html" itemprop="url">Contacto</a></li>
+                        </ul>
+                    </nav>
+                </section>
+                <section class="section_nav_politics">
+                    <nav>
+                        <ul>
+                            <li><a href="#" itemprop="url">Políticas de Privacidad</a></li>
+                            <li><a href="./terminoCondiciones.html" itemprop="url">Políticas de Uso</a></li>
+                            <li><a href="#" itemprop="url">Políticas de Cookies</a></li>
+                            <li><a href="#" itemprop="url">Base Legal</a></li>
+                        </ul>
+                    </nav>
+                </section>
+            </section>
+        </footer>
+    </section>
+</body>
+</html>

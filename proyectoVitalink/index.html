@@ -1,0 +1,195 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Metaetiquetas recomendadas -->
+    <meta name="description" content="VitaLink: Plataforma para la gestión de tratamientos médicos, citas, síntomas y reportes de salud.">
+    <meta name="keywords" content="salud, tratamientos, citas médicas, síntomas, historial clínico, plataforma médica, VitaLink">
+    <meta name="author" content="VitaLink Team">
+    <meta name="robots" content="index, follow">
+    <!-- Meta para redes sociales (Open Graph para Facebook y LinkedIn) -->
+    <meta property="og:title" content="VitaLink - Gestión de Tratamientos Médicos">
+    <meta property="og:description" content="Gestiona tus tratamientos, controla síntomas y recibe recordatorios inteligentes con VitaLink.">
+    <meta property="og:image" content="https://tusitio.com/media/logo_IA_Medica-blanco.svg">
+    <meta property="og:type" content="website">
+    <title>VitaLink</title>
+    <link rel="shortcut icon" href="./media/favicon_IA_Medica.ico" type="image/x-icon">
+    <link rel="stylesheet" href="CSS/style.css">
+    <script src="./JS/sccript.js"></script>
+    <script src="./JS/menuToggle.js"></script>
+</head>
+<body>
+    <section>
+        <header>
+        <section class="section_header">
+            <picture>
+                <img src="Vista/media/logo_IA_Medica-blanco.svg" alt="logotipo VitaLink">
+            </picture>
+    
+            <!-- Botón de menú hamburguesa -->
+            <section class="section_nav">
+                <div class="menu-toggle" id="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <nav class="nav-cabecera">
+                    <ul class="nav-links" id="nav-links">
+                        <li><a href="./index.html" class="menu">Inicio</a></li>
+                        <li><a href="./Vista/serviciosCliente.html" class="menu">Servicios Cliente</a></li>
+                        <li><a href="./Vista/serviciosEmpresa.html" class="menu">Servicios Empresa</a></li>
+                        <li><a href="#" class="menu">Documentación</a></li>
+                        <li><a href="./Vista/contacto.html" class="menu">Contacto</a></li>
+                    </ul>
+                </nav>
+            </section>
+    
+            <section class="section_user">
+                <picture><img src="./Vista/media/icons/user-rounded-icon.svg" alt="icon user"></picture>
+                <a href="./Vista/inicioSesion.html">Inicio Sesión</a>
+            </section>
+        </section>
+    </header>
+     
+    
+    <main>
+        <section class="section_main">
+            <section class="section_form">
+                <!-- Formulario de Contacto -->
+                <form action="formContacto.js" method="get" id="formulario">
+                    <p>
+                        <label for="nombre">Nombre:*</label>
+                        <input type="text" name="nombre" id="nombre" required>
+                    </p>
+                    <p>
+                        <label for="correo">Correo Electrónico:*</label>
+                        <input type="email" name="correo" id="correo" required>
+                    </p>
+                    <p>
+                        <label for="movil">Teléfono:</label>
+                        <input type="tel" name="movil" id="telefono">
+                    </p>
+                    <p>
+                        <button type="submit" id="btn-submit">Enviar</button>
+                    </p>
+                </form>
+                <picture><img src="./Vista/media/img/form_isometric-design-of-a-customer-service-center.svg" alt="customer service center"></picture>
+            </section>
+
+            <!-- Seccion Servicios -->
+            <section class="features-container">
+                <div class="feature">
+                    <picture><img src="./Vista/media/icons/calendar-days-icon.svg" alt="calendar icon" class="icon"></picture>
+                    <h3>Gestión de Citas</h3>
+                    <p>Descripción de la característica 1.</p>
+                </div>
+                <div class="feature">
+                    <picture><img src="./Vista/media/icons/jar-of-pills-icon.svg" alt="medical records icon" class="icon"></picture>
+                    <h3>Administración de tratamientos</h3>
+                    <p>Descripción de la característica 2.</p>
+                </div>
+                <div class="feature">
+                    <picture><img src="./Vista/media/icons/notes-medical-solid-icon.svg" alt="notes icon" class="icon"></picture>
+                    <h3>Informes Sintomáticos</h3>
+                    <p>Descripción de la característica 3.</p>
+                </div>
+                <div class="feature">
+                    <picture><img src="./Vista/media/icons/graphic-files-icon.svg" alt="stadistic icon" class="icon"></picture>
+                    <h3>Resportes de Salud</h3>
+                    <p>Descripción de la característica 4.</p>
+                </div>
+                <div class="feature">
+                    <picture><img src="./Vista/media/icons/clinic-history-icon.svg" alt="clinic history" class="icon"></picture>
+                    <h3>Historial Médico</h3>
+                    <p>Descripción de la característica 5.</p>
+                </div>
+                <div class="feature">
+                    <picture><img src="./Vista/media/icons/assistant-icon.svg" alt="assistant-icon" class="icon"></picture>
+                    <h3>Asistente 24h</h3>
+                    <p>Descripción de la característica 6.</p>
+                </div>
+            </section>
+            
+            <!-- Seccion Descripción Servicios -->
+            <section id="section_main_2">
+                <section class="section_services">
+                    <div class="div_general_services">
+                        <picture><img src="./Vista/media/icons/security-safe-icon.svg" alt="calendar icon" class="icon"></picture>
+                        <div class="div_description">
+                            <h3>Seguridad y Privacidad</h3>
+                            <p>Sincroniza tus citas médicas con Google Calendar para no olvidar ningún evento importante.</p>
+                        </div>
+                    </div>
+                    <div class="div_general_services">
+                        <picture><img src="./Vista/media/icons/reminder-medical-icon.svg" alt="medical records icon" class="icon"></picture>
+                        <div class="div_description">
+                            <h3>Recordatorios Inteligentes</h3>
+                            <p>Recibe notificaciones sobre citas médicas, medicamentos y controles de salud.</p>
+                        </div>
+                    </div>
+                </section>
+                <section class="section_services">    
+                    <div class="div_general_services">
+                        <picture><img src="./Vista/media/icons/user-history-icon.svg" alt="notes icon" class="icon"></picture>
+                        <div class="div_description">
+                            <h3>Acceso Rápido al Historial</h3>
+                            <p>Consulta tu historial clínico y reportes de salud en cualquier momento y desde cualquier dispositivo.</p>
+                        </div>
+                    </div>
+                    <div class="div_general_services">
+                        <picture><img src="./Vista/media/icons/support-icon.svg" alt="stadistic icon" class="icon"></picture>
+                        <div class="div_description">
+                            <h3>Soporte 24/7</h3>
+                            <p>Te acompañamos en todo momento con asistencia en línea y soporte técnico especializado.</p>
+                        </div>
+                    </div>
+                </section>
+                <section class="section_services">    
+                    <div class="div_general_services">
+                        <picture><img src="./Vista/media/icons/calendar-user-icon.svg" alt="clinic history" class="icon"></picture>
+                        <div class="div_description">
+                            <h3>Integración con tu Calendario</h3>
+                            <p>Sincroniza tus citas médicas con Google Calendar para no olvidar ningún evento importante.</p>
+                        </div>
+                    </div>    
+                    <div class="div_general_services">
+                        <picture><img src="./Vista/media/icons/desktop-and-phone-icon.svg" alt="assistant-icon" class="icon"></picture>
+                        <div class="div_description">
+                            <h3>Acceso Multiplataforma</h3>
+                            <p>Disponible en versión web y móvil para que gestiones tu salud desde cualquier lugar.</p>
+                        </div>
+                    </div>
+                </section>
+            </section>
+        </section>
+    </main>
+
+    <footer>
+        <section class="section_footer">
+            <picture><img src="Vista/media/logo_IA_Medica-blanco.svg" alt="logotipo VitaLink"></picture>
+            <section class="section_nav_footer">
+                <nav>
+                    <ul>
+                        <li><a href="./index.html">Inicio</a></li>
+                        <li><a href="./Vista/serviciosCliente.html">Servicios Clientes</a></li>
+                        <li><a href="./Vista/serviciosEmpresa.html">Servicios Empresas</a></li>
+                        <li><a href="#">Documentación</a></li>
+                        <li><a href="./Vista/contacto.html">Contacto</a></li>
+                    </ul>
+                </nav>
+            </section>
+            <section class="section_nav_politics">
+                <nav>
+                    <ul>
+                        <li><a href="#">Políticas Privacidad</a></li>
+                        <li><a href="./Vista/terminoCondiciones.html">Políticas de uso</a></li>
+                        <li><a href="#">Politicas de cookies</a></li>
+                        <li><a href="./Vista/panelUsuario.html">Base legal</a></li>
+                    </ul>
+                </nav>
+            </section>
+        </section>
+    </footer>
+    </section>
+</body>
+</html>

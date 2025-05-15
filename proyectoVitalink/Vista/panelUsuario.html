@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Usuario</title>
+    <link rel="shortcut icon" href="./media/favicon_IA_Medica.ico" type="image/x-icon">
+    <meta name="description" content="Panel de usuario con estadísticas, recordatorios y gestión médica para mejorar el seguimiento de tratamientos.">
+    <link rel="stylesheet" href="../CSS/style2.css">
+    <script src="../JS/panelUsuario.js"></script>
+    <script src="../JS/asistente.js"></script>
+    <script src="../JS/menuToggle.js"></script>
+</head>
+<body>
+    <section class="contenedor">
+        <header>
+            <section class="section_header">
+                <picture>
+                    <img src="./media/logo_IA_Medica-blanco.svg" alt="logotipo VitaLink">
+                </picture>
+                <!-- Botón de menú hamburguesa -->
+                <section class="section_nav">
+                    <div class="menu-toggle" id="menu-toggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <nav class="nav-cabecera">
+                        <ul class="nav-links" id="nav-links">
+                            <li><a href="../index.html" class="menu">Inicio</a></li>
+                            <li><a href="./serviciosCliente.html" class="menu">Servicios Cliente</a></li>
+                            <li><a href="./serviciosEmpresa.html" class="menu">Servicios Empresa</a></li>
+                            <li><a href="#" class="menu">Documentación</a></li>
+                            <li><a href="./contacto.html" class="menu">Contacto</a></li>
+                        </ul>
+                    </nav>
+                </section>
+                
+                <section class="section_user">
+                    <picture><img src="./media/icons/user-rounded-icon.svg" alt="icon user"></picture>
+                    <a href="./inicioSesion.html">Inicio Sesión</a>
+                </section>
+            </section>
+        </header>
+        <main id="main_panelUser">
+            <section class="section_main">
+                <section class="section_panelUser">
+                    <!-- Menu Panel de Usuario -->
+                    <nav class="nav_panelUser">
+                        <ul>
+                            <li><a href="./pedirCita.html">Citas Médicas</a></li>
+                            <li><a href="./estadisticasUsuario.html">Estadísticas</a></li>
+                            <li><a href="./recordatorios.html">Recordatorios</a></li>
+                            <li><a href="./historialMedico.html">Historial Médico</a></li>
+                            <li><a href="./registroTratamiento.html">Tratamientos</a></li>
+                            <li><a href="./configUsuario.html">Configuración</a></li>
+                        </ul>
+                    </nav>
+                </section>
+
+                <!-- Seccion Tarjetas Funcionalidades -->
+                <section class="dashboard-overview">
+                    <div class="card">⏰ Recordatorios de Medicación</div>
+                    <div class="card">📉 Evolución de Síntomas</div>
+                    <div class="card">📊 Progreso del Tratamiento</div>
+                    <div class="card wide-card">📣 Notificaciones y Mensajes</div>
+                    <div class="card">✅ Adherencia al Tratamiento</div>
+                    <div class="card">⚠️ Alertas de Dosis Olvidadas</div>
+                    <div class="card">💬 Conversaciones Asistente</div>
+                </section>
+            
+                <!-- Botón flotante -->
+                <div id="chat-toggle" onclick="toggleChat()">💬</div>
+
+                <!-- Ventana de chat asistente -->
+                <div id="chat-box">
+                <div id="chat-header">Asistente Virtual <span onclick="toggleChat()">X</span></div>
+                <div id="chat-body">
+                    <p><strong>Asistente:</strong> ¡Hola! ¿En qué puedo ayudarte?</p>
+                    <div id="chat-messages"></div>
+                    <input type="text" id="chat-input" placeholder="Escribe un mensaje..." onkeypress="handleKey(event)">
+                </div>
+                </div>
+
+                <script>
+                function toggleChat() {
+                const chatBox = document.getElementById("chat-box");
+                chatBox.classList.toggle("open");
+                }
+                </script>
+            </section>
+        </main>
+        
+        <footer itemscope itemtype="https://schema.org/WPFooter">
+            <section class="section_footer">
+                <picture><img src="./media/logo_IA_Medica-blanco.svg" alt="logotipo VitaLink"></picture>
+                <section class="section_nav">
+                    <nav>
+                        <ul>
+                            <li><a href="../index.html" itemprop="url">Inicio</a></li>
+                            <li><a href="./serviciosEmpresa.html" itemprop="url">Servicios Clientes</a></li>
+                            <li><a href="./serviciosCliente.html" itemprop="url">Servicios Empresas</a></li>
+                            <li><a href="#" itemprop="url">Documentación</a></li>
+                            <li><a href="./contacto.html" itemprop="url">Contacto</a></li>
+                        </ul>
+                    </nav>
+                </section>
+                <section class="section_nav_politics">
+                    <nav>
+                        <ul>
+                            <li><a href="#" itemprop="url">Políticas de Privacidad</a></li>
+                            <li><a href="./terminoCondiciones.html" itemprop="url">Políticas de Uso</a></li>
+                            <li><a href="#" itemprop="url">Políticas de Cookies</a></li>
+                            <li><a href="#" itemprop="url">Base Legal</a></li>
+                        </ul>
+                    </nav>
+                </section>
+            </section>
+        </footer>
+    </section>
+</body>
+</html>

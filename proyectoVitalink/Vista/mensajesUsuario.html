@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recordatorios Paciente</title>
+    <link rel="shortcut icon" href="./media/favicon_IA_Medica.ico" type="image/x-icon">
+    <meta name="description" content="Panel de usuario con recordatorios y gestión médica para mejorar el seguimiento de tratamientos.">
+    <link rel="stylesheet" href="../CSS/style2.css">
+    <script src="../JS/mensajesUsuario.js"></script>
+    <script src="../JS/menuToggle.js"></script>
+</head>
+<body>
+    <section class="contenedor">
+        <header>
+            <section class="section_header">
+                <picture>
+                    <img src="./media/logo_IA_Medica-blanco.svg" alt="logotipo VitaLink">
+                </picture>
+                
+                <section class="section_nav">
+                    <div class="menu-toggle" id="menu-toggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <nav class="nav-cabecera">
+                        <ul class="nav-links" id="nav-links">
+                            <li><a href="../index.html" class="menu">Inicio</a></li>
+                            <li><a href="./serviciosCliente.html" class="menu">Servicios Cliente</a></li>
+                            <li><a href="./serviciosEmpresa.html" class="menu">Servicios Empresa</a></li>
+                            <li><a href="#" class="menu">Documentación</a></li>
+                            <li><a href="./contacto.html" class="menu">Contacto</a></li>
+                        </ul>
+                    </nav>
+                </section>
+                
+                <section class="section_user">
+                    <picture><img src="./media/icons/user-rounded-icon.svg" alt="icon user"></picture>
+                    <a href="./inicioSesion.html">Inicio Sesión</a>
+                </section>
+            </section>
+        </header>
+        
+        <main id="main_panelUser">
+            <h1 class="text_center">📩 Bandeja de Mensajes</h1>
+        
+            <section class="config-usuario-panel">
+              <div class="config-usuario-menu">
+                <button class="btn-config activo">Todos</button>
+                <button class="btn-config">No leídos</button>
+                <button class="btn-config">Importantes</button>
+              </div>
+        
+              <div class="config-usuario-formulario">
+                <article class="mensaje">
+                  <h3>Resultado de análisis disponible</h3>
+                  <p><strong>De:</strong> Centro Médico</p>
+                  <p><strong>Fecha:</strong> 2024-04-14</p>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </article>
+        
+                <article class="mensaje">
+                  <h3>Recordatorio: cita mañana a las 10:00</h3>
+                  <p><strong>De:</strong> Sistema</p>
+                  <p><strong>Fecha:</strong> 2024-04-13</p>
+                  <p>Recuerda tu cita médica programada para mañana.</p>
+                </article>
+              </div>
+            </section>
+        </main>
+        
+        <footer itemscope itemtype="https://schema.org/WPFooter">
+            <section class="section_footer">
+                <picture><img src="./media/logo_IA_Medica-blanco.svg" alt="logotipo VitaLink"></picture>
+                <section class="section_nav">
+                    <nav>
+                        <ul>
+                            <li><a href="../index.html" itemprop="url">Inicio</a></li>
+                            <li><a href="./serviciosEmpresa.html" itemprop="url">Servicios Clientes</a></li>
+                            <li><a href="./serviciosCliente.html" itemprop="url">Servicios Empresas</a></li>
+                            <li><a href="#" itemprop="url">Documentación</a></li>
+                            <li><a href="./contacto.html" itemprop="url">Contacto</a></li>
+                        </ul>
+                    </nav>
+                </section>
+                <section class="section_nav_politics">
+                    <nav>
+                        <ul>
+                            <li><a href="#" itemprop="url">Políticas de Privacidad</a></li>
+                            <li><a href="./terminoCondiciones.html" itemprop="url">Políticas de Uso</a></li>
+                            <li><a href="#" itemprop="url">Políticas de Cookies</a></li>
+                            <li><a href="#" itemprop="url">Base Legal</a></li>
+                        </ul>
+                    </nav>
+                </section>
+            </section>
+        </footer>
+    </section>
+</body>
+</html>

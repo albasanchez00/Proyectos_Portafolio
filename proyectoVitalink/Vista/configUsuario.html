@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configuración Paciente</title>
+    <link rel="shortcut icon" href="./media/favicon_IA_Medica.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../CSS/style2.css">
+    <script src="../JS/evolucionUsuario.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../JS/menuToggle.js"></script>
+</head>
+<body>
+    <section class="contenedor">
+        <header>
+            <section class="section_header">
+                <picture>
+                    <img src="./media/logo_IA_Medica-blanco.svg" alt="logotipo VitaLink">
+                </picture>
+                <section class="section_nav">
+                    <div class="menu-toggle" id="menu-toggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <nav class="nav-cabecera">
+                        <ul class="nav-links" id="nav-links">
+                            <li><a href="../index.html" class="menu">Inicio</a></li>
+                            <li><a href="./serviciosCliente.html" class="menu">Servicios Cliente</a></li>
+                            <li><a href="./serviciosEmpresa.html" class="menu">Servicios Empresa</a></li>
+                            <li><a href="#" class="menu">Documentación</a></li>
+                            <li><a href="./contacto.html" class="menu">Contacto</a></li>
+                        </ul>
+                    </nav>
+                </section>
+                <section class="section_user">
+                    <picture><img src="./media/icons/user-rounded-icon.svg" alt="icon user"></picture>
+                    <a href="./inicioSesion.html">Inicio Sesión</a>
+                </section>
+            </section>
+        </header>
+     
+        <main id="main_configuracionUsuario">
+            <section class="config-usuario-container">
+              <h1 class="config-usuario-titulo">Configuración de Usuario</h1>
+          
+              <div class="config-usuario-panel">
+                <!-- Menu Lateral Configuración Cliente -->
+                <aside class="config-usuario-menu">
+                    <button onclick="mostrarSeccion('seccion-datos', this)" class="btn-config activo">Datos</button>
+                    <button onclick="mostrarSeccion('seccion-contrasena', this)" class="btn-config">Contraseña</button>
+                    <button onclick="mostrarSeccion('seccion-preferencias', this)" class="btn-config">Preferencias</button>
+                </aside>
+                <section class="config-usuario-formulario">
+                  <div id="seccion-datos" class="config-seccion activa">
+                    <label>Nombre:
+                      <input type="text" placeholder="Nombre...">
+                    </label>
+                    <label>Apellido:
+                      <input type="text" placeholder="Apellido...">
+                    </label>
+                    <label>Correo electrónico:
+                      <input type="email" placeholder="correo@ejemplo.com">
+                    </label>
+                    <label>Teléfono:
+                      <input type="tel" placeholder="123456789">
+                    </label>
+                  </div>
+          
+                  <div id="seccion-contrasena" class="config-seccion">
+                    <label>Contraseña actual:
+                      <input type="password">
+                    </label>
+                    <label>Nueva contraseña:
+                      <input type="password">
+                    </label>
+                    <label>Confirmar nueva:
+                      <input type="password">
+                    </label>
+                  </div>
+          
+                  <div id="seccion-preferencias" class="config-seccion">
+                    <label><input type="checkbox"> Recibir notificaciones</label>
+                    <label>Tema:
+                      <select>
+                        <option value="claro">Claro</option>
+                        <option value="oscuro">Oscuro</option>
+                      </select>
+                    </label>
+                  </div>
+          
+                  <button class="btn-guardar-config">Guardar Cambios</button>
+                  <p id="mensaje-confirmacion" class="config-mensaje" style="display:none;">
+                    ¡Cambios guardados correctamente!
+                  </p>
+                </section>
+              </div>
+            </section>
+        </main>
+          
+        
+
+        <footer>
+            <section class="section_footer">
+                <picture><img src="./media/logo_IA_Medica-blanco.svg" alt="logotipo VitaLink"></picture>
+                <section class="section_nav_footer">
+                    <nav>
+                      <ul>
+                        <li><a href="../index.html" itemprop="url">Inicio</a></li>
+                        <li><a href="./serviciosEmpresa.html" itemprop="url">Servicios Clientes</a></li>
+                        <li><a href="./serviciosCliente.html" itemprop="url">Servicios Empresas</a></li>
+                        <li><a href="#" itemprop="url">Documentación</a></li>
+                        <li><a href="./contacto.html" itemprop="url">Contacto</a></li>
+                      </ul>
+                    </nav>
+                </section>
+                <section class="section_nav_politics">
+                    <nav>
+                        <ul>
+                            <li><a href="#">Políticas Privacidad</a></li>
+                            <li><a href="./terminoCondiciones.html">Políticas de uso</a></li>
+                            <li><a href="#">Politicas de cookies</a></li>
+                            <li><a href="#">Base legal</a></li>
+                        </ul>
+                    </nav>
+                </section>
+            </section>
+        </footer>
+    </section>
+    <script src="../JS/configUsuario.js"></script>
+</body>
+</html>
