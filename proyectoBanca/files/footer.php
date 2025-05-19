@@ -3,7 +3,7 @@
 /** @noinspection PhpUnusedAliasInspection */
 
 use mod\UsuarioBanco;
-include_once "../mod/UsuarioBanco.php";
+include_once "/proyectoBanca/mod/UsuarioBanco.php";
 ?>
 <!doctype html>
 <html lang="es">

@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Banco Virtual</title>
-    <link rel="stylesheet" href="../css/style.css"> <!-- Enlace opcional a CSS -->
-    <link rel="stylesheet" href="../css/style2.css"> <!-- Enlace opcional a CSS -->
-    <link rel="icon" href="media/favicon.jpg">
+    <link rel="stylesheet" href="/proyectoBanca/css/style.css"> <!-- Enlace opcional a CSS -->
+    <link rel="stylesheet" href="/proyectoBanca/css/style2.css"> <!-- Enlace opcional a CSS -->
+    <link rel="icon" href="/proyectoBanca/media/favicon.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
@@ -15,7 +15,7 @@
 <body>
 <div class="row ancho">
     <div class="col-6">
-        <img src="media/logo-banca-online.png" alt="Banca Online" class="logo">
+        <img src="/proyectoBanca/files/media/logo-banca-online.png" alt="Banca Online" class="logo">
     </div>
     <div class="col-6  derecha">
             <span class="material-symbols-outlined icono-verde">

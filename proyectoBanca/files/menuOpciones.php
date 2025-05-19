@@ -1,8 +1,8 @@
 <?php
-include_once "../mod/UsuarioBanco.php";
+include_once "/proyectoBanca/mod/UsuarioBanco.php";
 session_start ();
 if (isset($_SESSION['usuario'])){
-include_once "header.php";
+include_once "/proyectoBanca/files/header.php";
 ?>
     <div class="caja-blanca">
 
@@ -13,13 +13,13 @@ include_once "header.php";
             </div>
         </div>
         <div class="navbar">
-            <a class="active" href="../index.php"><i class="fa fa-fw fa-home"></i> Home</a>
-            <a href="ingresar.php"><i class="fa fa-fw fa-search"></i> Ingresar</a>
-            <a href="retirar.php"><i class="fa fa-fw fa-envelope"></i> Retirar</a>
-            <a href="cambiarPin.php"><i class="fa fa-fw fa-user"></i> Cambiar Pin</a>
+            <a class="active" href="/proyectoBanca/index.php"><i class="fa fa-fw fa-home"></i> Home</a>
+            <a href="/proyectoBanca/files/ingresar.php"><i class="fa fa-fw fa-search"></i> Ingresar</a>
+            <a href="/proyectoBanca/files/retirar.php"><i class="fa fa-fw fa-envelope"></i> Retirar</a>
+            <a href="/proyectoBanca/files/cambiarPin.php"><i class="fa fa-fw fa-user"></i> Cambiar Pin</a>
         </div>
         <?php
-        include_once "footer.php";
+        include_once "/proyectoBanca/files/footer.php";
         ?>
     </div>
     </body>
@@ -31,6 +31,6 @@ include_once "header.php";
 
 
 }else{
-    header ("Location:../index.php?mensaje=Usuario no autorizado");
+    header ("Location:/proyectoBanca/index.php?mensaje=Usuario no autorizado");
 }
 ?>

@@ -1,11 +1,11 @@
 <?php
-include "header.php";
+include "/proyectoAdidas/header.php";
 if (!isset($_SESSION["usuario"])){
 ?>
 <div id="container-inicio">
     <div class="container">
         <h2 class="textoCentrado">Inicio Sesión</h2>
-        <form class="formularios" action="controlador.php" method="post">
+        <form class="formularios" action="/proyectoAdidas/controlador.php" method="post">
             <label for="usuario">Usuario</label>
             <input type="text" id="usuario" name="usuario" required>
             <label for="password">Contraseña</label>

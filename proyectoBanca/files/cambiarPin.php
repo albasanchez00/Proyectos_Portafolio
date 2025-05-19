@@ -1,6 +1,6 @@
 <?php
 if (!isset($_SESSION["usuario"])){
-include "header.php";
+include "/proyectoBanca/files/header.php";
 ?>
 <div class="caja-negra">
     <div class="numeros">
@@ -10,7 +10,7 @@ include "header.php";
 <div class="caja-blanca">
     <!-- Cambiar PIN -->
     <h2>Cambiar PIN</h2>
-    <form method="POST" action="../controlador/procesar.php?action=cambiar_pin">
+    <form method="POST" action="/proyectoBanca/controlador/procesar.php?action=cambiar_pin">
         <label for="nuevoPin">Nuevo PIN:</label>
         <input type="password" name="nuevoPin" id="nuevoPin" required><br>
         <button type="submit">Cambiar PIN</button>

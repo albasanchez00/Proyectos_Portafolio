@@ -1,5 +1,5 @@
 <?php
-include 'header.php';
+include '/proyectoAdidas/header.php';
 ?>
 <!--
 * 1. Crear Formularo en el que pidamos: Nombre, Correo, Numero tlfno y Dirección

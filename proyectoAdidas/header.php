@@ -39,9 +39,9 @@ session_start();
 <nav>
     <!--menu resepctivo-->
     <div class="menu">
-        <a href="index.php#mujer">Mujer</a>
-        <a href="index.php#hombre">Hombre</a>
-        <a href="index.php#infantil">Infantil</a>
-        <a href="index.php#calzado">Calzado</a>
+        <a href="/proyectoAdidas/index.php#mujer">Mujer</a>
+        <a href="/proyectoAdidas/index.php#hombre">Hombre</a>
+        <a href="/proyectoAdidas/index.php#infantil">Infantil</a>
+        <a href="/proyectoAdidas/index.php#calzado">Calzado</a>
     </div>
 </nav>

@@ -30,7 +30,7 @@ if (isset($_POST["agregar"])){
     }
 
     actualizarCesta();
-    header('Location: index.php');
+    header('Location: /proyectoAdidas/index.php');
 }
 
 
@@ -50,7 +50,7 @@ if (isset($_POST["eliminarCarrito"])){
     unset($_SESSION["carrito"]); // Elimina el Array -> $_SESSION["carrito"]
 
     actualizarCesta();
-    header('Location: mostrarCarrito.php');
+    header('Location:/proyectoAdidas/mostrarCarrito.php');
 }
 
 // Actualizar Cantidad Artículos
@@ -63,7 +63,7 @@ if (isset($_POST["actualizarCarrito"])){
     }
 
     actualizarCesta();
-    header('Location: mostrarCarrito.php');
+    header('Location: /proyectoAdidas/mostrarCarrito.php');
 }
 
 // Eliminar Producto en Línea
@@ -73,5 +73,5 @@ if (isset($_POST["eliminarProducto"])){
     unset($_SESSION["carrito"][$id]); // Eliminando un valor del array
 
     actualizarCesta();
-    header('Location: mostrarCarrito.php');
+    header('Location: /proyectoAdidas/mostrarCarrito.php');
 }

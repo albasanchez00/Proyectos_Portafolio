@@ -1,5 +1,5 @@
 <?php
-include "header.php";
+include "/proyectoBanca/files/header.php";
 ?>
 <div class="caja-negra">
     <div class="numeros">
@@ -8,7 +8,7 @@ include "header.php";
 </div>
 <!-- Ingresar Dinero -->
 <h2>Ingresar Dinero</h2>
-<form method="POST" action="../controlador/procesar.php?action=ingresar">
+<form method="POST" action="/proyectoBanca/controlador/procesar.php?action=ingresar">
     <label for="cantidad">Cantidad:</label>
     <input type="number" name="cantidad" id="cantidad" required><br>
     <button type="submit">Ingresar</button>

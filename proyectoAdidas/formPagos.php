@@ -54,5 +54,5 @@ if ($_POST['metodo_pago'] == "redsys") {
 
 // Creamos texto que envie un mensaje en caso de ERROR ->
 function enviarMensajeError($mensaje){
-    header('Location:index.php?mensaje='.$mensaje);
+    header('Location:/proyectoAdidas/index.php?mensaje='.$mensaje);
 }

@@ -12,7 +12,7 @@ include "files/header.php";
 
     <!-- Validación de Usuario -->
     <h3>Iniciar Sesión</h3>
-    <form method="post" action="controlador/procesar.php?action=validar" class="formulario">
+    <form method="post" action="/proyectoBanca/controlador/procesar.php" class="formulario">
         <label for="nombre"></label>
         <input type="text" name="nombre" id="nombre" placeholder="Nombre:" required><br>
         <label for="pin"></label>
