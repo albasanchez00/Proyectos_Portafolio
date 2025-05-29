@@ -1,5 +1,5 @@
 <?php
-include '/proyectoAdidas/header.php';
+include './header.php';
 ?>
 
 
@@ -38,7 +38,7 @@ include '/proyectoAdidas/header.php';
                   </td>
 
                   <td>
-                      <form action="/proyectoAdidas/carrito.php" method="post">
+                      <form action="./carrito.php" method="post">
                       <input type="hidden" name="id" value="<?php echo $productoID?>">
                       <input type="number" name="cantidad" value="<?php echo $producto["cantidad"]?>" min="1">
                         <!-- Permitir actualizar el número de productos -->
@@ -55,7 +55,7 @@ include '/proyectoAdidas/header.php';
                   </td>
 
                   <td>
-                      <form class="btn-form" action="carrito.php" method="post">
+                      <form class="btn-form" action="./carrito.php" method="post">
                           <input type="hidden" name="id" value="<?php echo $productoID?>">
                           <input class="btn-eliminar" type="submit" name="eliminarProducto" value="Eliminar">
                       </form>
@@ -75,15 +75,15 @@ include '/proyectoAdidas/header.php';
                       <?php echo $total?>€
                   </td>
                   <td>
-                      <form class="btn-form" action="carrito.php" method="post">
+                      <form class="btn-form" action="./carrito.php" method="post">
                           <input class="btn-eliminar" type="submit" name="eliminarCarrito" value="Vaciar Cesta">
                       </form>
                   </td>
               </tr>
           </table>
           <div>
-              <a class="btn-carrito" href="/proyectoAdidas/mostrarCarrito.php">Volver</a>
-              <a class="btn-carrito" href="/proyectoAdidas/tramitarPedido.php">Tramitar Pedido</a>
+              <a class="btn-carrito" href="./mostrarCarrito.php">Volver</a>
+              <a class="btn-carrito" href="./tramitarPedido.php">Tramitar Pedido</a>
           </div>
 
 

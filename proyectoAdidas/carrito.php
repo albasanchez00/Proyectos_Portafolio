@@ -50,7 +50,7 @@ if (isset($_POST["eliminarCarrito"])){
     unset($_SESSION["carrito"]); // Elimina el Array -> $_SESSION["carrito"]
 
     actualizarCesta();
-    header('Location:/proyectoAdidas/mostrarCarrito.php');
+    header('Location:./mostrarCarrito.php');
 }
 
 // Actualizar Cantidad Artículos
@@ -63,7 +63,7 @@ if (isset($_POST["actualizarCarrito"])){
     }
 
     actualizarCesta();
-    header('Location: /proyectoAdidas/mostrarCarrito.php');
+    header('Location: ./mostrarCarrito.php');
 }
 
 // Eliminar Producto en Línea
@@ -73,5 +73,5 @@ if (isset($_POST["eliminarProducto"])){
     unset($_SESSION["carrito"][$id]); // Eliminando un valor del array
 
     actualizarCesta();
-    header('Location: /proyectoAdidas/mostrarCarrito.php');
+    header('Location: ./mostrarCarrito.php');
 }

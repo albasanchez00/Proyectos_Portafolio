@@ -1,5 +1,5 @@
 <?php
-include '/proyectoAdidas/header.php';
+include './header.php';
 ?>
 <!--
 * 1. Crear Formularo en el que pidamos: Nombre, Correo, Numero tlfno y Dirección
@@ -21,7 +21,7 @@ include '/proyectoAdidas/header.php';
     <section class="bloque-Form">
         <h1 class="textoCentrado">Finalizar Pedido</h1>
 
-        <form class="form-pedido" action="formPagos.php" method="post">
+        <form class="form-pedido" action="./formPagos.php" method="post">
             <p>
                 <label for="nombre">Nombre</label>
                 <input type="text" name="nombre" required>
@@ -52,10 +52,9 @@ include '/proyectoAdidas/header.php';
             </p>
 
             <p class="btn-datos">
-                <a class="btn-volver" href="mostrarCarrito.php">Volver</a>
+                <a class="btn-volver" href="./mostrarCarrito.php">Volver</a>
                 <input class="btn-volver" type="submit" value="Siguiente">
             </p>
-
         </form>
     </section>
 </section>

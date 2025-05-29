@@ -12,7 +12,7 @@ if (empty($_POST["usuario"])||empty($_POST["password"])){
     if (validarUsuario($_POST["usuario"],$_POST["password"])){
         //Creamos la variable de SESION y lo enviamos a la página salida.php
         $_SESSION["user"] = $_POST["usuario"];
-        header('Location:salida.php');
+        header('Location:./salida.php');
     }else{
         echo "<br>";
         enviarMensajeError("Datos incorrectos");

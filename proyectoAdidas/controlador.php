@@ -48,7 +48,7 @@ if (isset($_POST["crearUsuario"])){
 
 // Creamos texto que envie un mensaje en caso de ERROR ->
 function enviarMensajeError($mensaje){
-    header('Location:/proyectoAdidas/login.php?mensaje='.$mensaje);
+    header('Location:./login.php?mensaje='.$mensaje);
 }
 
 // Creamos una validacion de Usuarios ->

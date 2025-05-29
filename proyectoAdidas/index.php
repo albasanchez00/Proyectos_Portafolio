@@ -1,18 +1,18 @@
 <?php
-include "header.php";
+include "./header.php";
 
 //Leo lo que se añade al carrito
 
 ?>
-<video src="/proyectoAdidas/media/adidas-productos-de-baloncesto.mp4" loop muted autoplay class="video"></video>
+<video src="./media/adidas-productos-de-baloncesto.mp4" loop muted autoplay class="video"></video>
     <div>
         <div id="mujer">
         <!--  Es muy utilizado en php input type=hidden -> Para pasar parametro, pero no los muestra (metodo GET o POST).  -->
             <h2 class="titulo_secc">Sección Mujer</h2>
             <div class="responsive">
                 <div class="galeria">
-                        <a href="/proyectoAdidas/media/conjunto-mujer-pilates-adidas.webp">
-                            <img src="/proyectoAdidas/media/conjunto-mujer-pilates-adidas.webp" alt="Conjunto Adidas" class="galeria-item">
+                        <a href="./media/conjunto-mujer-pilates-adidas.webp">
+                            <img src="./media/conjunto-mujer-pilates-adidas.webp" alt="Conjunto Adidas" class="galeria-item">
                         </a>
                         <div class="descripcion">85€</div>
                         <form action="carrito.php" method="post">
@@ -30,8 +30,8 @@ include "header.php";
 
             <div class="responsive">
                 <div class="galeria">
-                    <a href="/proyectoAdidas/media/malla-corta-mujer-rosa-adidas.webp">
-                        <img src="/proyectoAdidas/media/malla-corta-mujer-rosa-adidas.webp" alt="Mallas Mujer Adidas" class="galeria-item">
+                    <a href="./media/malla-corta-mujer-rosa-adidas.webp">
+                        <img src="./media/malla-corta-mujer-rosa-adidas.webp" alt="Mallas Mujer Adidas" class="galeria-item">
                     </a>
                     <div class="descripcion">85€</div>
                     <form action="carrito.php" method="post">
@@ -49,8 +49,8 @@ include "header.php";
 
             <div class="responsive">
                 <div class="galeria">
-                    <a href="/proyectoAdidas/media/chandal-mujer-adidas-rojo.webp">
-                        <img src="/proyectoAdidas/media/chandal-mujer-adidas-rojo.webp" alt="Chandal Mujer Adidas" class="galeria-item">
+                    <a href="./media/chandal-mujer-adidas-rojo.webp">
+                        <img src="./media/chandal-mujer-adidas-rojo.webp" alt="Chandal Mujer Adidas" class="galeria-item">
                     </a>
                     <div class="descripcion">85€</div>
                     <form action="carrito.php" method="post">
@@ -68,8 +68,8 @@ include "header.php";
 
             <div class="responsive">
                 <div class="galeria">
-                    <a href="/proyectoAdidas/media/bañador-mujer-prenatal-adidas.webp">
-                        <img src="/proyectoAdidas/media/bañador-mujer-prenatal-adidas.webp" alt="Bañador Pre-Mama Adidas" class="galeria-item">
+                    <a href="./media/bañador-mujer-prenatal-adidas.webp">
+                        <img src="./media/bañador-mujer-prenatal-adidas.webp" alt="Bañador Pre-Mama Adidas" class="galeria-item">
                     </a>
                     <div class="descripcion">85€</div>
                     <form action="carrito.php" method="post">
@@ -90,8 +90,8 @@ include "header.php";
             <h2 class="titulo_secc">Sección Hombre</h2>
             <div class="responsive">
                 <div class="galeria">
-                    <a href="/proyectoAdidas/media/chandal-verde-hombre-adidas.webp">
-                        <img src="/proyectoAdidas/media/chandal-verde-hombre-adidas.webp" alt="Chandal Verde Adidas" class="galeria-item">
+                    <a href="./media/chandal-verde-hombre-adidas.webp">
+                        <img src="./media/chandal-verde-hombre-adidas.webp" alt="Chandal Verde Adidas" class="galeria-item">
                     </a>
                     <div class="descripcion">85€</div>
                     <form action="carrito.php" method="post">
@@ -108,8 +108,8 @@ include "header.php";
             </div>
             <div class="responsive">
                 <div class="galeria">
-                    <a href="/proyectoAdidas/media/bañador-adidas-negro-hombre.webp">
-                        <img src="/proyectoAdidas/media/bañador-adidas-negro-hombre.webp" alt="Bañador Hombre Adidas" class="galeria-item">
+                    <a href="./media/bañador-adidas-negro-hombre.webp">
+                        <img src="./media/bañador-adidas-negro-hombre.webp" alt="Bañador Hombre Adidas" class="galeria-item">
                     </a>
                     <div class="descripcion">85€</div>
                     <form action="carrito.php" method="post">
@@ -127,8 +127,8 @@ include "header.php";
 
             <div class="responsive">
                 <div class="galeria">
-                    <a href="/proyectoAdidas/media/malla-termicas-adidas-hombre.webp">
-                        <img src="/proyectoAdidas/media/malla-termicas-adidas-hombre.webp" alt="Malla Hombre Adidas" class="galeria-item">
+                    <a href="./media/malla-termicas-adidas-hombre.webp">
+                        <img src="./media/malla-termicas-adidas-hombre.webp" alt="Malla Hombre Adidas" class="galeria-item">
                     </a>
                     <div class="descripcion">85€</div>
                     <form action="carrito.php" method="post">
@@ -146,8 +146,8 @@ include "header.php";
 
             <div class="responsive">
                 <div class="galeria">
-                    <a href="/proyectoAdidas/media/abrigo-hombre-gris-adidas.webp">
-                        <img src="/proyectoAdidas/media/abrigo-hombre-gris-adidas.webp" alt="Abrigo Hombre Adidas" class="galeria-item">
+                    <a href="./media/abrigo-hombre-gris-adidas.webp">
+                        <img src="./media/abrigo-hombre-gris-adidas.webp" alt="Abrigo Hombre Adidas" class="galeria-item">
                     </a>
                     <div class="descripcion">85€</div>
                     <form action="carrito.php" method="post">
@@ -169,8 +169,8 @@ include "header.php";
             <h2 class="titulo_secc">Sección Infantil</h2>
             <div class="responsive">
                 <div class="galeria">
-                    <a href="/proyectoAdidas/media/conjunto-adidas-infantil.avif">
-                        <img src="/proyectoAdidas/media/conjunto-adidas-infantil.avif" alt="Chandal Infantil Adidas" class="galeria-item">
+                    <a href="./media/conjunto-adidas-infantil.avif">
+                        <img src="./media/conjunto-adidas-infantil.avif" alt="Chandal Infantil Adidas" class="galeria-item">
                     </a>
                     <div class="descripcion">85€</div>
                     <form action="carrito.php" method="post">
@@ -188,8 +188,8 @@ include "header.php";
 
             <div class="responsive">
                 <div class="galeria">
-                    <a href="/proyectoAdidas/media/infantil-unisex-camiseta-verde.avif">
-                        <img src="/proyectoAdidas/media/infantil-unisex-camiseta-verde.avif" alt="Camiseta Verde Infantil Adidas" class="galeria-item">
+                    <a href="./media/infantil-unisex-camiseta-verde.avif">
+                        <img src="./media/infantil-unisex-camiseta-verde.avif" alt="Camiseta Verde Infantil Adidas" class="galeria-item">
                     </a>
                     <div class="descripcion">85€</div>
                     <form action="carrito.php" method="post">
@@ -207,8 +207,8 @@ include "header.php";
 
             <div class="responsive">
                 <div class="galeria">
-                    <a href="/proyectoAdidas/media/abrigo-gris-infantil.avif">
-                        <img src="/proyectoAdidas/media/abrigo-gris-infantil.avif" alt="Abrigo Infantil Adidas" class="galeria-item">
+                    <a href="./media/abrigo-gris-infantil.avif">
+                        <img src="./media/abrigo-gris-infantil.avif" alt="Abrigo Infantil Adidas" class="galeria-item">
                     </a>
                     <div class="descripcion">85€</div>
                     <form action="carrito.php" method="post">
@@ -226,8 +226,8 @@ include "header.php";
 
             <div class="responsive">
                 <div class="galeria">
-                    <a href="/proyectoAdidas/media/calcetines-marvel-infantil.avif">
-                        <img src="/proyectoAdidas/media/calcetines-marvel-infantil.avif" alt="Chandal Infantil Adidas" class="galeria-item">
+                    <a href="./media/calcetines-marvel-infantil.avif">
+                        <img src="./media/calcetines-marvel-infantil.avif" alt="Chandal Infantil Adidas" class="galeria-item">
                     </a>
                     <div class="descripcion">85€</div>
                     <form action="carrito.php" method="post">
@@ -249,8 +249,8 @@ include "header.php";
             <h2 class="titulo_secc">Sección Calzado</h2>
             <div class="responsive">
                 <div class="galeria">
-                    <a href="/proyectoAdidas/media/zapatilla-basket-profi.webp">
-                        <img src="/proyectoAdidas/media/zapatilla-basket-profi.webp" alt="Deportivas Basket Adidas" class="galeria-item">
+                    <a href="./media/zapatilla-basket-profi.webp">
+                        <img src="./media/zapatilla-basket-profi.webp" alt="Deportivas Basket Adidas" class="galeria-item">
                     </a>
                     <div class="descripcion">85€</div>
                     <form action="carrito.php" method="post">
@@ -268,8 +268,8 @@ include "header.php";
 
             <div class="responsive">
                 <div class="galeria">
-                    <a href="/proyectoAdidas/media/zapatilla-blanco-azul-infantil.avif">
-                        <img src="/proyectoAdidas/media/zapatilla-blanco-azul-infantil.avif" alt="Deportivas Infantiles Adidas" class="galeria-item">
+                    <a href="./media/zapatilla-blanco-azul-infantil.avif">
+                        <img src="./media/zapatilla-blanco-azul-infantil.avif" alt="Deportivas Infantiles Adidas" class="galeria-item">
                     </a>
                     <div class="descripcion">85€</div>
                     <form action="carrito.php" method="post">
@@ -287,8 +287,8 @@ include "header.php";
 
             <div class="responsive">
                 <div class="galeria">
-                    <a href="/proyectoAdidas/media/zapatilla-stan-smith.webp">
-                        <img src="/proyectoAdidas/media/zapatilla-stan-smith.webp" alt="Deportivas Basket Adidas" class="galeria-item">
+                    <a href="./media/zapatilla-stan-smith.webp">
+                        <img src="./media/zapatilla-stan-smith.webp" alt="Deportivas Basket Adidas" class="galeria-item">
                     </a>
                     <div class="descripcion">85€</div>
                     <form action="carrito.php" method="post">
@@ -306,8 +306,8 @@ include "header.php";
 
             <div class="responsive">
                 <div class="galeria">
-                    <a href="/proyectoAdidas/media/chanclas-blacas-adidas-de-hombre.jpg">
-                        <img src="/proyectoAdidas/media/chanclas-blacas-adidas-de-hombre.jpg" alt="Deportivas Basket Adidas" class="galeria-item">
+                    <a href="./media/chanclas-blacas-adidas-de-hombre.jpg">
+                        <img src="./media/chanclas-blacas-adidas-de-hombre.jpg" alt="Deportivas Basket Adidas" class="galeria-item">
                     </a>
                     <div class="descripcion">85€</div>
                     <form action="carrito.php" method="post">
