@@ -30,7 +30,7 @@ if (isset($_POST["agregar"])){
     }
 
     actualizarCesta();
-    header('Location: ./index.php');
+    header('Location:./index.php');
 }
 
 
