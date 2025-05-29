@@ -20,7 +20,7 @@ if (empty($_POST["usuario"])||empty($_POST["password"])){
 }
 
 function enviarMensajeError($mensaje){
-    header('Location: login.php?mensaje='.$mensaje);
+    header('Location:./login.php?mensaje='.$mensaje);
 }
 
 function validarUsuario($usuario, $password) {

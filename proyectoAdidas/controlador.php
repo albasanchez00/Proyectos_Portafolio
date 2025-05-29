@@ -11,7 +11,7 @@ if (isset($_POST['iniciarSesion'])) {
     }else{
         if(validarUsuario($_POST["usuario"],$_POST["password"])){
             $_SESSION["usuario"]=$_POST["usuario"];
-            header("Location:/proyectoAdidas/index.php");
+            header("Location:./index.php");
 
         }else{
             $mensaje="Los datos no son correctos";
