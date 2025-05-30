@@ -5,7 +5,7 @@ if (isset($_POST["agregar"])){
     $nombreProducto = $_POST["nombre-producto"];
     $precioProducto = $_POST["precio"];
     $cantidadProducto = $_POST["cantidad"];
-    var_dump($cantidadProducto);
+    // var_dump($cantidadProducto); // Debugging output removed to avoid header issues
 
 
     // El carrito es una variable de sesión
@@ -30,7 +30,7 @@ if (isset($_POST["agregar"])){
     }
 
     actualizarCesta();
-    header('Location:./index.php'); // Redirige a la página principal después de agregar el producto
+    header('Location: ./index.php'); // Redirige a la página principal después de agregar el producto
 }
 
 
