@@ -104,8 +104,8 @@
                     </select>
                 </div>
                 <div class="enviarBoton">
-                    <input type="submit" name="enviarFormulario" value="↪ Siguiente" id="enviarFormulario">
-                </div>
+                        <input type="submit" name="enviarFormulario" value="↪ Siguiente" id="enviarFormulario">
+                </div> 
                 <div class="errores">
                     <?php
                     if (!empty($_GET["errores"])){
@@ -113,10 +113,8 @@
                     }
                     ?>
                 </div>
+            </div>    
         </div>
-
-
-
     </form>
 </body>
 </html>

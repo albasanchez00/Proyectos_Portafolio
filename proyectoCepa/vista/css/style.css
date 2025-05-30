@@ -96,7 +96,7 @@ input[type="text"]:focus, select:focus {
 .enviarBoton{
     width: 60%;
     text-align: center;
-    background-color: black;
+    background-color: #fff;
     padding: 20px;
     border-radius: 0 0 5px;
     margin: auto;

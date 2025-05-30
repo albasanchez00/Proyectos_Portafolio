@@ -1,5 +1,5 @@
 <?php
-include_once("vista/header.php");
+include_once("./vista/header.php");
 ?>
 
     <h1>Bienvenido</h1>
@@ -16,5 +16,5 @@ include_once("vista/header.php");
     </section>
 
 <?php
-include_once("vista/footer.php");
+include_once("./vista/footer.php");
 ?>
