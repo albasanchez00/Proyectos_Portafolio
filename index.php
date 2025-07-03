@@ -11,7 +11,7 @@
     <li><a href="/proyectoVitalink/index.html">Ver VitaLink</a></li>
     <li><a href="/proyectoAdidas/index.php">Ver Adidas</a></li>
     <li><a href="/proyectoCepa/index.php">Ver Cepa</a></li>
-    <li><a href="/tiendaAceites_E2/index.html">Ver Tienda Aceite</a></li>
+    <li><a href="/tiendaAceites/index.html">Ver Tienda Aceite</a></li>
     <li><a href="/mascotas/index.php">Ver Mascotas</a></li>
     <li><a href="/proyectoBanca/index.php">Ver Banca Online</a></li>
   </ul>
