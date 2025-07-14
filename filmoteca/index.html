@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Film Library</title>
+    <link rel="stylesheet" href="./css/filmoteca.css">
+    <script src="./js/filmoteca.js" defer></script>
+    <link rel="icon" href="media/ico-filmoteca.svg" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <picture><img src="media/logo-filmoteca.svg" alt=""></picture>
+        <nav>
+            <ul>
+                <a href="./index.html"><li>Inicio</li></a>
+                <a href="#peliculas-container"><li>Peliculas</li></a>
+                <a href="#"><li>Series</li></a>
+            </ul>
+        </nav>
+        <section>
+            <button type="submit" id="mi-lista">Mi lista</button>
+            <a><img class="icon-user" id="btn-login" src="media/icon-user (2).svg" alt="icono usuario"></a>
+        </section>
+    </header>
+    <main>
+        <div class="container">
+            <h1>Mi Filmoteca</h1>
+            <p>Explora y descubre películas de diferentes géneros.</p>
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Buscar películas...">
+                <button id="search-button">Buscar</button>
+            </div>  
+            <div id="peliculas-container" class="peliculas-container">
+                <!-- Las tarjetas de películas se insertarán aquí mediante JavaScript -->
+            </div>
+        </div>
+    </main>
+    <footer class="footer" role="contentinfo">
+      <div class="container footer__inner">
+        <p class="footer__copy">© 2025 Film Library</p>
+      </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            filmoteca.cargarLocal();
+            mostrarPeliculas();
+        });
+    </script>
+</body>
+</html>
