@@ -5,10 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Evolución Paciente</title>
     <link rel="shortcut icon" href="./media/favicon_IA_Medica.ico" type="image/x-icon">
-    <link rel="stylesheet" href="../CSS/style2.css">
-    <script src="../JS/evolucionUsuario.js"></script>
+    <link rel="stylesheet" href="../css/style2.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="../JS/menuToggle.js"></script>
+    <script src="../js/evolucionUsuario.js" defer></script>
 </head>
 <body>
     <section class="contenedor">
@@ -51,19 +50,19 @@
                 <!-- Gráfico de evolución (línea) -->
                 <div class="card-evolucion wide-card">
                   <h3>Evolución de Síntomas</h3>
-                  <canvas id="lineChart"></canvas>
+                  <canvas id="graficoSintomas"></canvas>
                 </div>
         
                 <!-- Gráfico de frecuencia de síntomas (barras) -->
                 <div class="card-evolucion">
-                  <h3>Síntomas Más Comunes</h3>
-                  <canvas id="barChart"></canvas>
+                  <h3>Citas Asistidas</h3>
+                  <canvas id="graficoCitas"></canvas>
                 </div>
         
                 <!-- Gráfico de adherencia (pastel) -->
                 <div class="card-evolucion">
-                  <h3>Adherencia al Tratamiento</h3>
-                  <canvas id="pieChart"></canvas>
+                  <h3>Evolución del Paciente</h3>
+                  <canvas id="graficoEvolucion"></canvas>
                 </div>
               </div>
             </section>
@@ -96,5 +95,6 @@
             </section>
         </footer>
     </section>
+    <script src="../js/menuToggle.js"></script>
 </body>
 </html>

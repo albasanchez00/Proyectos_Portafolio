@@ -6,9 +6,8 @@
     <title>Recordatorios Paciente</title>
     <link rel="shortcut icon" href="./media/favicon_IA_Medica.ico" type="image/x-icon">
     <meta name="description" content="Panel de usuario con recordatorios y gestión médica para mejorar el seguimiento de tratamientos.">
-    <link rel="stylesheet" href="../CSS/style2.css">
-    <script src="../JS/recordatoriosUsuario.js"></script>
-    <script src="../JS/menuToggle.js"></script>
+    <link rel="stylesheet" href="../css/style2.css">
+    <script src="../js/menuToggle.js"></script>
 </head>
 <body>
     <section class="contenedor">
@@ -60,15 +59,15 @@
                 <label for="descripcion">Descripción:</label>
                 <textarea id="descripcion" name="descripcion" rows="3"></textarea>
         
-                <button type="submit">Guardar Recordatorio</button>
+                <button type="submit" id="btn-guardar">Guardar Recordatorio</button>
               </form>
             </section>
         
-            <section id="calendario">
-              <h2>Recordatorios Activos</h2>
-              <ul id="lista-recordatorios">
-                <li>No hay recordatorios aún.</li>
-              </ul>
+            <section id="recordatorio-card">
+                <h2>Recordatorios Activos</h2>
+                <div id="recordatorios-activos">
+                    <p>No hay recordatorios aún.</p>
+                </div>
             </section>
         </main>
         
@@ -99,5 +98,6 @@
             </section>
         </footer>
     </section>
+    <script src="../js/recordatoriosUsuario.js"></script>
 </body>
 </html>
