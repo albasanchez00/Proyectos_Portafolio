@@ -1,42 +1,47 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const form = document.getElementById("form-recordatorio");
-    const lista = document.getElementById("lista-recordatorios");
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("form-recordatorio");
+  const lista = document.getElementById("recordatorios-activos");
 
-    const recordatorios = JSON.parse(localStorage.getItem("recordatorios")) || [];
+  let recordatorios = [];
 
-    function renderizar() {
-      lista.innerHTML = "";
-      if (recordatorios.length === 0) {
-        lista.innerHTML = "<li>No hay recordatorios aún.</li>";
-        return;
-      }
-      recordatorios.forEach((rec, index) => {
-        const item = document.createElement("li");
-        item.innerHTML = `<strong>${rec.titulo}</strong> - ${rec.fecha} ${rec.hora}<br>${rec.descripcion}<br>
-          <button onclick="eliminarRecordatorio(${index})">Eliminar</button>`;
-        lista.appendChild(item);
-      });
-    }
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
 
-    window.eliminarRecordatorio = (index) => {
-      recordatorios.splice(index, 1);
-      localStorage.setItem("recordatorios", JSON.stringify(recordatorios));
-      renderizar();
+    const titulo = document.getElementById("titulo").value;
+    const fecha = document.getElementById("fecha").value;
+    const hora = document.getElementById("hora").value;
+    const descripcion = document.getElementById("descripcion").value;
+
+    const nuevo = {
+      id: crypto.randomUUID(), // identificador único
+      titulo,
+      fecha,
+      hora,
+      descripcion
     };
 
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-      const nuevo = {
-        titulo: form.titulo.value,
-        fecha: form.fecha.value,
-        hora: form.hora.value,
-        descripcion: form.descripcion.value
-      };
-      recordatorios.push(nuevo);
-      localStorage.setItem("recordatorios", JSON.stringify(recordatorios));
-      form.reset();
-      renderizar();
-    });
+    recordatorios.push(nuevo);
+    renderizarRecordatorios();
+    form.reset();
+  });
 
-    renderizar();
+  function renderizarRecordatorios() {
+    if (recordatorios.length === 0) {
+      lista.innerHTML = "<p>No hay recordatorios aún.</p>";
+      return;
+    }
+
+    lista.innerHTML = "";
+    recordatorios.forEach((rec) => {
+      const card = document.createElement("div");
+      card.className = "recordatorio-card";
+      card.innerHTML = `
+        <h3>${rec.titulo}</h3>
+        <p><strong>📅 Fecha:</strong> ${rec.fecha}</p>
+        <p><strong>⏰ Hora:</strong> ${rec.hora}</p>
+        <p><strong>📝 Descripción:</strong> ${rec.descripcion}</p>
+      `;
+      lista.appendChild(card);
+    });
+  }
 });
