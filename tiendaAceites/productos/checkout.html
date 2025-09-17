@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Finalizar compra</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <section class="contenedor">
+    <!-- Header igual que en las otras páginas -->
+    <header>
+      <picture class="picture_header">
+        <img src="../assets/logo-tienda-aceite.png" alt="Logotipo Tienda Aceites">
+      </picture>
+
+      <section class="section_nav">
+        <div class="menu-toggle" id="menu-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links" role="button" tabindex="0">
+          <span></span><span></span><span></span>
+        </div>
+        <nav class="nav-cabecera">
+          <ul class="nav-links" id="nav-links" role="menu">
+            <li><a href="../index.html" class="menu" role="menuitem">Inicio</a></li>
+            <li><a href="./aceiteOliva.html" class="menu" role="menuitem">Aceite Oliva</a></li>
+            <li><a href="./aceiteGirasol.html" class="menu" role="menuitem">Aceite Girasol</a></li>
+            <li><a href="#" class="menu" role="menuitem">Contacto</a></li>
+          </ul>
+        </nav>
+
+        <div class="header__actions">
+          <a href="../index.html#productos" class="btn_reserva header__cta">Comprar ahora</a>
+          <a href="./carrito.html" class="mini-cart-link" aria-label="Ver carrito">
+            <span class="mini-cart-icon" aria-hidden="true">🛒</span>
+            <span id="mini-cart-count" class="mini-cart-badge">0</span>
+            <span id="mini-cart-total" class="mini-cart-total">0,00 €</span>
+          </a>
+        </div>
+      </section>
+
+      <div class="nav-backdrop" id="nav-backdrop" hidden></div>
+      <div id="cart-announcer" class="visually-hidden" aria-live="polite"></div>
+    </header>
+
+    <!-- MAIN -->
+    <main class="checkout">
+      <h1 class="checkout__title">Finalizar compra</h1>
+      <!-- Toast de pedido -->
+      <div id="order-toast" class="order-toast" aria-live="assertive" hidden>
+        <div class="order-toast__box">
+          <h2>¡Gracias por tu pedido!</h2>
+          <p>Estamos procesándolo ahora mismo.</p>
+          <p class="order-toast__small">Serás redirigido al inicio en <span id="order-toast-count">3</span>…</p>
+          <a href="../index.html" class="btn btn--primary order-toast__cta">Volver al inicio ahora</a>
+        </div>
+      </div>
+
+
+      <section class="checkout__layout">
+        <!-- Formulario -->
+        <form id="checkout-form" class="form card" novalidate>
+          <fieldset>
+            <legend>Datos de contacto</legend>
+
+            <div class="grid-2">
+              <label>Nombre y apellidos
+                <input name="fullName" required autocomplete="name" />
+              </label>
+              <label>Email
+                <input type="email" name="email" required autocomplete="email" inputmode="email" />
+              </label>
+            </div>
+
+            <div class="grid-2">
+              <label>Teléfono
+                <input type="tel" name="phone" required autocomplete="tel" inputmode="tel" />
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Dirección de envío</legend>
+
+            <label>Dirección
+              <input name="address" required autocomplete="address-line1" />
+            </label>
+
+            <div class="grid-3">
+              <label>Ciudad
+                <input name="city" required autocomplete="address-level2" />
+              </label>
+              <label>Provincia
+                <input name="state" required autocomplete="address-level1" />
+              </label>
+              <label>Código Postal
+                <input name="zip" required pattern="\d{5}" inputmode="numeric" maxlength="5" autocomplete="postal-code" />
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Método de pago</legend>
+            <label class="radio"><input type="radio" name="payment" value="cod" checked> Contra reembolso</label>
+            <label class="radio"><input type="radio" name="payment" value="card"> Tarjeta (Stripe próximamente)</label>
+          </fieldset>
+
+          <button class="btn btn--primary" type="submit">Confirmar pedido</button>
+          <p class="form__error" id="checkout-error" aria-live="polite"></p>
+        </form>
+
+        <!-- Resumen -->
+        <aside class="checkout__summary card" aria-label="Resumen del pedido">
+          <h2 class="summary__title">Resumen</h2>
+          <ul id="summary-items" class="summary__items"></ul>
+
+          <div id="summary-totals" class="summary__totals"></div>
+          <p class="summary__note">Envío gratis desde 50 € · Impuestos estimados 10%</p>
+        </aside>
+      </section>
+    </main>
+
+    <footer>
+      <section class="section_footer">
+        <picture><img src="../assets/logo-tienda-aceite.png" alt="logotipo tienda aceite"></picture>
+        <section class="section_nav_footer">
+          <nav>
+            <ul>
+              <li><a href="../index.html" class="menu">Inicio</a></li>
+              <li><a href="./aceiteOliva.html" class="menu">Aceite Oliva</a></li>
+              <li><a href="./aceiteGirasol.html" class="menu">Aceite Girasol</a></li>
+              <li><a href="#" class="menu">Contacto</a></li>
+            </ul>
+          </nav>
+        </section>
+        <section class="section_nav_politics">
+          <nav>
+            <ul>
+              <li><a href="#">Políticas de uso</a></li>
+              <li><a href="#">Aviso Legal</a></li>
+              <li><a href="#">Conócenos</a></li>
+            </ul>
+          </nav>
+        </section>
+      </section>
+    </footer>
+  </section>
+
+  <!-- JS comunes -->
+  <script src="../js/script.js" defer></script>
+  <script src="../js/order-toast.js"></script>
+  
+
+  <!-- Módulos del checkout -->
+  <script type="module" src="../js/checkout.js"></script>
+</body>
+</html>

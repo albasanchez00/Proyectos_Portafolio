@@ -3,49 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Film Library - Tu biblioteca de películas personal">
+    <meta name="author" content="Alba Sánchez Olmedo">
+    <meta name="keywords" content="film library, películas, cine, biblioteca de películas, gestión de películas">
+    <metas name="robots" content="index, follow">
+    <meta name="language" content="Spanish">
+    <meta name="revised" content="2024-06-10">
+    <meta name="theme-color" content="#2c3e50">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Film Library">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="msapplication-TileColor" content="#2c3e50">
+    <meta name="msapplication-TileImage" content="media/ico-filmoteca.svg">
     <title>Film Library</title>
     <link rel="stylesheet" href="./css/filmoteca.css">
     <script src="./js/filmoteca.js" defer></script>
     <link rel="icon" href="media/ico-filmoteca.svg" type="image/x-icon">
 </head>
 <body>
-    <header>
-        <picture><img src="media/logo-filmoteca.svg" alt=""></picture>
-        <nav>
-            <ul>
-                <a href="./index.html"><li>Inicio</li></a>
-                <a href="#peliculas-container"><li>Peliculas</li></a>
-                <a href="#"><li>Series</li></a>
+    <header role="banner" class="site-header">
+        <picture class="site-header__logo">
+            <img src="media/logo-filmoteca.svg" alt="Filmoteca — logo">
+        </picture>
+
+        <nav class="site-nav" role="navigation" aria-label="Navegación principal">
+            <ul class="site-nav__list">
+            <li class="site-nav__item"><a class="site-nav__link" href="./index.html">Inicio</a></li>
+            <li class="site-nav__item"><a class="site-nav__link" href="#peliculas-container">Películas</a></li>
+            <li class="site-nav__item"><a class="site-nav__link" href="#">Series</a></li>
             </ul>
         </nav>
-        <section>
-            <button type="submit" id="mi-lista">Mi lista</button>
-            <a><img class="icon-user" id="btn-login" src="media/icon-user (2).svg" alt="icono usuario"></a>
-        </section>
-    </header>
-    <main>
-        <div class="container">
-            <h1>Mi Filmoteca</h1>
-            <p>Explora y descubre películas de diferentes géneros.</p>
-            <div class="search-container">
-                <input type="text" id="search-input" placeholder="Buscar películas...">
-                <button id="search-button">Buscar</button>
-            </div>  
-            <div id="peliculas-container" class="peliculas-container">
-                <!-- Las tarjetas de películas se insertarán aquí mediante JavaScript -->
-            </div>
+
+        <div class="header-actions" aria-label="Acciones de usuario">
+            <button type="button" id="mi-lista" class="btn">Mi lista</button>
+            <button type="button" id="btn-login" class="icon-user" aria-label="Iniciar sesión">
+            <img src="media/icon-user (2).svg" alt="Icono de usuario">
+            </button>
         </div>
+    </header>
+
+    <main>
+        <section class="filmoteca">
+            <h1>Mi Filmoteca</h1>
+            <div class="search-container">
+                <input id="search-input" type="search" placeholder="Busca por título o descripción" aria-label="Buscar películas">
+                <button id="search-button">Buscar</button>
+            </div>
+            <section id="peliculas-container" class="peliculas-container"></section>
+            <div id="toast" class="toast"></div>
+        </section>
+
     </main>
     <footer class="footer" role="contentinfo">
       <div class="container footer__inner">
         <p class="footer__copy">© 2025 Film Library</p>
       </div>
     </footer>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            filmoteca.cargarLocal();
-            mostrarPeliculas();
-        });
-    </script>
+    <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true"></div>
 </body>
 </html>

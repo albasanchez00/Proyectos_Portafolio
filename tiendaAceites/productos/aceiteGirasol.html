@@ -5,28 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../css/style.css">
-    <script src="../js/script.js"></script>
-
 </head>
 <body>
     <section class="contenedor">
         <header>
-            <picture class="picture_header"><img src="../assets/logo-tienda-aceite.png" alt="logotipo tienda aceite"></picture>
+            <picture class="picture_header">
+                <img src="../assets/logo-tienda-aceite.png" alt="Logotipo Tienda Aceites">
+            </picture>
+
             <section class="section_nav">
-                <div class="menu-toggle" id="menu-toggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                <!-- Botón hamburguesa -->
+                <div class="menu-toggle" id="menu-toggle"
+                    aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links" role="button" tabindex="0">
+                <span></span><span></span><span></span>
                 </div>
+
+                <!-- Navegación -->
                 <nav class="nav-cabecera">
-                    <ul class="nav-links" id="nav-links">
-                        <li><a href="../index.html" class="menu">Inicio</a></li>
-                        <li><a href="./aceiteOliva.html" class="menu">Aceite Oliva</a></li>
-                        <li><a href="./aceiteGirasol.html" class="menu">Aceite Girasol</a></li>
-                        <li><a href="#" class="menu">Contacto</a></li>
-                    </ul>
+                <ul class="nav-links" id="nav-links" role="menu">
+                    <li><a href="../index.html" class="menu" role="menuitem">Inicio</a></li>
+                    <li><a href="./aceiteOliva.html" class="menu" role="menuitem">Aceite Oliva</a></li>
+                    <li><a href="./aceiteGirasol.html" class="menu" role="menuitem">Aceite Girasol</a></li>
+                    <li><a href="#" class="menu" role="menuitem">Contacto</a></li>
+                </ul>
                 </nav>
+
+                <!-- Acciones: CTA + MiniCart -->
+                <div class="header__actions">
+                <a href="#productos" class="btn_reserva header__cta">Comprar ahora</a>
+
+                <a href="./carrito.html" class="mini-cart-link" aria-label="Ver carrito">
+                    <span class="mini-cart-icon" aria-hidden="true">🛒</span>
+                    <span id="mini-cart-count" class="mini-cart-badge">0</span>
+                    <span id="mini-cart-total" class="mini-cart-total">0,00 €</span>
+                </a>
+                </div>
             </section>
+
+            <!-- Backdrop para cerrar al pulsar fuera -->
+            <div class="nav-backdrop" id="nav-backdrop" hidden></div>
+
+            <!-- Anunciador accesible -->
+            <div id="cart-announcer" class="visually-hidden" aria-live="polite"></div>
         </header>
 
         <main>
@@ -37,45 +57,79 @@
                     <p>Gracias a su alta resistencia a las temperaturas, es ideal para frituras, salteados, repostería y mayonesas, manteniendo siempre la textura y el sabor natural de tus alimentos. </p>
                 </div>
             </section>
-            <section id="card-productos">
-                <div>
-                    <picture><img src="../assets/botella-de-aceite-de-girasol-extra-virgen.png" alt=""></picture>
-                    <h2>Aceite Girasol Extra Virgen</h2>
-                    <p>Ideal para realzar el sabor de tus platos, con una textura ligera y una calidad excepcional.</p>
-                    <a href="./aceiteGirasol.html" class="btn_producto">Extra Virgen</a>
-                </div>
-                <div>
-                    <picture><img src="../assets/botella-de-aceite-de-girasol-natural.png" alt=""></picture>
-                    <h2>Aceite Girasol Natural</h2>
-                    <p>Un aceite ligero y de sabor suave, ideal para una alimentación equilibrada. Ideal para freír y hornear.</p>
-                    <a href="./aceiteGirasol.html" class="btn_producto">Natural</a>
-                </div>
-                <div>
-                    <picture><img src="../assets/botella-de-aceite-de-girasol-refinado.png" alt=""></picture>
-                    <h2>Aceite Girasol Refinado</h2>
-                    <p>Suave, versátil y con un alto punto de humo, perfecto para todas tus necesidades culinarias diarias.</p>
-                    <a href="./aceiteGirasol.html" class="btn_producto">Refinado</a>
-                </div>
-                <div>
-                    <picture><img src="../assets/botella-de-aceite-de-girasol-extra-virgen.png" alt=""></picture>
-                    <h2>Aceite Girasol Extra Virgen</h2>
-                    <p>Ideal para realzar el sabor de tus platos, con una textura ligera y una calidad excepcional.</p>
-                    <a href="./aceiteGirasol.html" class="btn_producto">Extra Virgen</a>
-                </div>
-                <div>
-                    <picture><img src="../assets/botella-de-aceite-de-girasol-natural.png" alt=""></picture>
-                    <h2>Aceite Girasol Natural</h2>
-                    <p>Un aceite ligero y de sabor suave, ideal para una alimentación equilibrada. Ideal para freír y hornear.</p>
-                    <a href="./aceiteGirasol.html" class="btn_producto">Natural</a>
-                </div>
-                <div>
-                    <picture><img src="../assets/botella-de-aceite-de-girasol-refinado.png" alt=""></picture>
-                    <h2>Aceite Girasol Refinado</h2>
-                    <p>Suave, versátil y con un alto punto de humo, perfecto para todas tus necesidades culinarias diarias.</p>
-                    <a href="./aceiteGirasol.html" class="btn_producto">Refinado</a>
-                </div>
-            </section>
+            <section id="card-productos" class="grid-products">
+                <!-- Anunciador accesible para “añadido al carrito” -->
+                <div id="cart-announcer" class="visually-hidden" aria-live="polite"></div>
+                <article class="product-card">
+                    <picture><img loading="lazy" src="../assets/botella-de-aceite-de-girasol-extra-virgen.png"
+                    alt="Aceite Girasol Extra Virgen 500ml"></picture>
+                    <h2 class="product-card__title">Aceite Girasol Extra Virgen 500ml</h2>
+                    <p class="product-card__desc">Ideal para realzar el sabor de tus platos, con una textura ligera y una calidad excepcional.</p>
+                    <div class="product-card__footer">
+                        <p class="product-card__price" data-price="6.90">6,90 €</p>  <!-- o 39,90 si es tu precio real -->
 
+                        <label class="product-card__label" for="qty-girasol-extra-500">Cantidad</label>
+                        <input id="qty-girasol-extra-500" class="product-card__qty" type="number" min="1" value="1" inputmode="numeric">
+
+                        <button class="btn btn--primary add-to-cart"
+                            data-id="SKU-GIRASOL-EXTRA-500"
+                            data-name="Aceite Girasol Extra Virgen 500ml"
+                            data-price="39.90" 
+                            data-image="../assets/botella-de-aceite-de-girasol-extra-virgen.png"
+                            data-url="./aceiteGirasol.html"
+                            aria-label="Añadir Aceite Girasol Extra Virgen 500ml al carrito">
+                            Añadir al carrito
+                        </button>
+                    </div>
+
+                </article>
+
+                <article class="product-card">
+                    <picture><img loading="lazy" src="../assets/botella-de-aceite-de-girasol-natural.png"
+                    alt="Aceite Girasol Natural 500ml"></picture>
+                    <h2 class="product-card__title">Aceite Girasol Natural 500ml</h2>
+                    <p class="product-card__desc">Un aceite ligero y de sabor suave, ideal para una alimentación equilibrada. Ideal para freír y hornear.</p>
+                    <div class="product-card__footer">
+                        <p class="product-card__price" data-price="29.90">29,90 €</p>
+
+                        <label class="product-card__label" for="qty-gir-natural-500">Cantidad</label>
+                        <input id="qty-gir-natural-500" class="product-card__qty" type="number" min="1" value="1" inputmode="numeric">
+
+                        <button class="btn btn--primary add-to-cart"
+                            data-id="SKU-GIRASOL-NATURAL-500"
+                            data-name="Aceite Girasol Natural 500ml"
+                            data-price="29.90"
+                            data-image="../assets/botella-de-aceite-de-girasol-natural.png"
+                            data-url="./aceiteGirasol.html"
+                            aria-label="Añadir Aceite Girasol Natural 500ml al carrito">
+                            Añadir al carrito
+                        </button>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <picture><img loading="lazy" src="../assets/botella-de-aceite-de-girasol-refinado.png"
+                    alt="Aceite Girasol Refinado 500ml"></picture>
+                    <h2 class="product-card__title">Aceite Girasol Refinado 500ml</h2>
+                    <p class="product-card__desc">Suave, versátil y con un alto punto de humo, perfecto para todas tus necesidades culinarias diarias.</p>
+                    <div class="product-card__footer">
+                        <p class="product-card__price" data-price="9.90">9,90 €</p>
+
+                        <label class="product-card__label" for="qty-gir-refinado-500">Cantidad</label>
+                        <input id="qty-gir-refinado-500" class="product-card__qty" type="number" min="1" value="1" inputmode="numeric">
+
+                        <button class="btn btn--primary add-to-cart"
+                            data-id="SKU-GIRASOL-REFINADO-500"
+                            data-name="Aceite Girasol Refinado 500ml"
+                            data-price="9.90"
+                            data-image="../assets/botella-de-aceite-de-girasol-refinado.png"
+                            data-url="./aceiteGirasol.html"
+                            aria-label="Añadir Aceite Girasol Refinado 500ml al carrito">
+                            Añadir al carrito
+                        </button>
+                    </div>
+                </article>   
+            </section>
         </main>
 
         <footer>
@@ -103,5 +157,11 @@
             </section>
         </footer>
     </section>
+    <script type="module">
+        import '../js/script.js';
+        import '../js/format.js';
+        import '../js/cart.js';
+        import '../js/ui-cart.js';
+    </script>
 </body>
 </html>

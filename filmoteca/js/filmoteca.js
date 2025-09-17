@@ -1,209 +1,246 @@
-// filmoteca.js actualizado con persistencia de estado 'visto' y manejo robusto de imágenes
+// === filmoteca.js — estilo Netflix/Prime corregido ===
 
-const catalogo = [
-  {
-    image: "./media/The-Shawshank-Redemption.jpg",
-    nombre: "The Shawshank Redemption",
-    descripcion: "Un banquero es condenado injustamente por el asesinato de su esposa y encuentra la esperanza y la redención dentro de los muros de la prisión de Shawshank.",
-    genero: ["Drama", "Crimen"],
-    anioEstreno: 1994
-  },
-  {
-    image: "./media/Inception.jpg",
-    nombre: "Inception",
-    descripcion: "Un ladrón especializado en robar secretos a través de los sueños debe realizar la tarea inversa: implantar una idea en la mente de su objetivo.",
-    genero: ["Ciencia ficción", "Thriller"],
-    anioEstreno: 2010
-  },
-  {
-    image: "./media/Parasite.jpg",
-    nombre: "Parasite (Gisaengchung)",
-    descripcion: "Una familia pobre se infiltra progresivamente en la vida de una adinerada, desatando una oscura serie de eventos.",
-    genero: ["Drama", "Thriller", "Sátira social"],
-    anioEstreno: 2019
-  },
-  {
-    image: "./media/The-Grand-Budapest-Hotel.jpg",
-    nombre: "The Grand Budapest Hotel",
-    descripcion: "Un excéntrico conserje y su joven protegido se ven envueltos en un robo de arte, una batalla por una herencia y el caos de la Europa de entreguerras.",
-    genero: ["Comedia", "Aventura", "Crimen"],
-    anioEstreno: 2014
-  },
-  {
-    image: "./media/Coco.jpg",
-    nombre: "Coco",
-    descripcion: "Un niño mexicano llamado Miguel viaja al mundo de los muertos para descubrir la historia de su familia y cumplir su sueño de ser músico.",
-    genero: ["Animación", "Aventura", "Familiar"],
-    anioEstreno: 2017
-  },
-  {
-    image: "./media/Whiplash.jpg",
-    nombre: "Whiplash",
-    descripcion: "Un joven baterista ambicioso se enfrenta al despiadado y exigente maestro de su conservatorio, llevando su talento y resistencia al límite en busca de la perfección.",
-    genero: ["Drama", "Musica"],
-    anioEstreno: 2017
-  }
-];
-
+// 1) Catálogo inicial (se guarda en localStorage solo si no existe)
+const catalogo = [/* ...tu listado de películas... */];
 if (!localStorage.getItem("catalogo")) {
   localStorage.setItem("catalogo", JSON.stringify(catalogo));
 }
 
-const contenedor = document.getElementById("peliculas-container");
-const miListaButton = document.getElementById("mi-lista");
-const searchButton = document.getElementById("search-button");
-const searchInput = document.getElementById("search-input");
+// 2) Utils de storage
+const getCatalogo = () => JSON.parse(localStorage.getItem("catalogo")) || [];
+const getMiLista  = () => JSON.parse(localStorage.getItem("miLista")) || [];
+const setMiLista  = (lista) => localStorage.setItem("miLista", JSON.stringify(lista));
+const getVistas   = () => JSON.parse(localStorage.getItem("peliculasVistas")) || {};
+const setVistas   = (v) => localStorage.setItem("peliculasVistas", JSON.stringify(v));
 
-function getPeliculasVistas() {
-  return JSON.parse(localStorage.getItem('peliculasVistas')) || {};
+// 3) Helpers UI
+function showToast(msg) {
+  const t = document.getElementById("toast");
+  if (!t) return;
+  t.textContent = msg;
+  t.classList.add("show");
+  setTimeout(() => t.classList.remove("show"), 2500);
+}
+function placeholderOnError(img) {
+  img.onerror = null;
+  img.src = "./media/placeholder-poster.svg";
+  img.alt = "Póster no disponible";
 }
 
-function setPeliculasVistas(vistas) {
-  localStorage.setItem('peliculasVistas', JSON.stringify(vistas));
+// 4) Refs DOM
+const contenedor   = document.getElementById("peliculas-container");
+const miListaBtn   = document.getElementById("mi-lista");
+const searchBtn    = document.getElementById("search-button");
+const searchInput  = document.getElementById("search-input");
+
+// 5) Agrupar por género
+function agruparPorGenero(peliculas) {
+  const map = new Map();
+  peliculas.forEach(p => p.genero.forEach(g => {
+    const key = g.trim();
+    if (!map.has(key)) map.set(key, []);
+    map.get(key).push(p);
+  }));
+  return map;
 }
 
-function mostrarPeliculas(peliculas) {
-  contenedor.innerHTML = "";
-  const vistas = getPeliculasVistas();
+// 6) Thumb
+function crearThumb(pelicula, {enLista=false, visto=false}={}) {
+  const el = document.createElement('article');
+  el.className = 'thumb'; el.tabIndex = 0;
 
-  peliculas.forEach(pelicula => {
-    const tarjeta = document.createElement("div");
-    tarjeta.className = "pelicula-card";
-
-    if (vistas[pelicula.nombre]) {
-      tarjeta.classList.add('visto');
-    }
-
-    tarjeta.innerHTML = `
-      <img src="${pelicula.image}" alt="${pelicula.nombre}">
-      <h2>${pelicula.nombre}</h2>
-      <p>${pelicula.descripcion}</p>
-      <p><strong>Géneros:</strong> ${pelicula.genero.join(", ")}</p>
-      <p><strong>Año de estreno:</strong> ${pelicula.anioEstreno}</p>
-      <button class="btn-reproducir"><img src="./media/icon-play-circle.svg">Reproducir</button>
-      <button class="btn-agregar"><img src="./media/icon-add.svg">Agregar a mi lista</button>
-    `;
-
-    contenedor.appendChild(tarjeta);
-
-    tarjeta.querySelector(".btn-reproducir").addEventListener("click", () => {
-      alert(`Reproduciendo: ${pelicula.nombre}`);
-    });
-    tarjeta.querySelector(".btn-agregar").addEventListener("click", () => {
-      agregarAMiLista(pelicula);
-    });
-  });
-  miListaButton.style.display = peliculas.length > 0 ? 'block' : 'none';
-}
-
-function agregarAMiLista(pelicula) {
-  let miLista = JSON.parse(localStorage.getItem('miLista')) || [];
-  const vistas = getPeliculasVistas();
-
-  if (miLista.some(p => p.nombre === pelicula.nombre)) {
-    alert("Esta película ya está en tu lista.");
-    return;
+  if (visto) {
+    const b = document.createElement('span');
+    b.className = 'thumb__badge';
+    b.textContent = 'Visto';
+    el.appendChild(b);
   }
 
-  const peliculaParaAgregar = { ...pelicula, visto: !!vistas[pelicula.nombre] };
+  el.innerHTML += `
+    <img class="thumb__img" src="${pelicula.image}" alt="Póster de ${pelicula.nombre}" loading="lazy">
+    <div class="thumb__overlay">
+      <div class="thumb__title">${pelicula.nombre}</div>
+      <div class="thumb__meta">${pelicula.anioEstreno} · ${pelicula.genero.join(' / ')}</div>
+      <div class="thumb__actions">
+        <button class="btn-mini btn-play" aria-label="Reproducir ${pelicula.nombre}">
+          <img src="./media/icon-play-circle.svg" alt="" aria-hidden="true"> Reproducir
+        </button>
+        ${enLista ? `
+          <button class="btn-mini btn-icon btn-visto" aria-label="${visto ? 'Desmarcar' : 'Marcar'} como visto — ${pelicula.nombre}">
+            <img src="${visto ? './media/icon-visibility-off.svg' : './media/icon-visibility.svg'}" alt="" aria-hidden="true">
+          </button>
+          <button class="btn-mini btn-icon btn-eliminar" aria-label="Eliminar ${pelicula.nombre} de mi lista">
+            <img src="./media/icon-cancel.svg" alt="" aria-hidden="true">
+          </button>` : `
+          <button class="btn-mini btn-icon btn-agregar" aria-label="Agregar ${pelicula.nombre} a mi lista">
+            <img src="./media/icon-add.svg" alt="" aria-hidden="true">
+          </button>`}
+      </div>
+    </div>
+  `;
 
-  miLista.push(peliculaParaAgregar);
-  localStorage.setItem('miLista', JSON.stringify(miLista));
-  alert("Película agregada a tu lista.");
-}
-
-function mostrarMiLista() {
-  const miLista = JSON.parse(localStorage.getItem('miLista')) || [];
-  contenedor.innerHTML = '';
-
-  if (miLista.length === 0) {
-    const mensaje = document.createElement('p');
-    mensaje.textContent = "Tu lista está vacía.";
-    mensaje.style.textAlign = 'center';
-    contenedor.appendChild(mensaje);
-    return;
-  }
-
-  miLista.forEach(pelicula => {
-    const tarjeta = document.createElement("div");
-    tarjeta.className = "pelicula-card";
-    const visto = pelicula.visto === true;
-
-    if (visto) tarjeta.classList.add('visto');
-
-    tarjeta.innerHTML = `
-      <img src="${pelicula.image}" alt="${pelicula.nombre}">
-      <h2>${pelicula.nombre}</h2>
-      <p>${pelicula.descripcion}</p>
-      <p><strong>Géneros:</strong> ${pelicula.genero.join(", ")}</p>
-      <p><strong>Año de estreno:</strong> ${pelicula.anioEstreno}</p>
-      <button class="btn-reproducir"><img src="./media/icon-play-circle.svg">Reproducir</button>
-      <button class="btn-eliminar"><img src="./media/icon-cancel.svg">Eliminar de mi lista</button>
-      <button class="btn-visto">${visto ? '<img src="./media/icon-visibility-off.svg">Desmarcar como visto' : '<img src="./media/icon-visibility.svg">Marcar como visto'}</button>
-    `;
-
-    contenedor.appendChild(tarjeta);
-
-    tarjeta.querySelector(".btn-reproducir").addEventListener("click", () => {
-      alert(`Reproduciendo: ${pelicula.nombre}`);
-    });
-    tarjeta.querySelector(".btn-eliminar").addEventListener("click", () => {
-      eliminarDeMiLista(pelicula);
-    });
-    tarjeta.querySelector(".btn-visto").addEventListener("click", () => {
-      alternarVisto(pelicula);
-    });
-  });
-}
-
-function eliminarDeMiLista(pelicula) {
-  let miLista = JSON.parse(localStorage.getItem('miLista')) || [];
-  miLista = miLista.filter(p => p.nombre !== pelicula.nombre);
-  localStorage.setItem('miLista', JSON.stringify(miLista));
-  alert("Película eliminada de tu lista.");
-  mostrarMiLista();
-}
-
-function alternarVisto(pelicula) {
-  let miLista = JSON.parse(localStorage.getItem('miLista')) || [];
-  const index = miLista.findIndex(p => p.nombre === pelicula.nombre);
-  if (index !== -1) {
-    miLista[index].visto = !miLista[index].visto;
-    localStorage.setItem('miLista', JSON.stringify(miLista));
-
-    const vistas = getPeliculasVistas();
-    if (miLista[index].visto) {
-      vistas[pelicula.nombre] = true;
-    } else {
-      delete vistas[pelicula.nombre];
-    }
-    setPeliculasVistas(vistas);
-
-    mostrarMiLista();
+  // Eventos
+  el.querySelector('.btn-play')?.addEventListener('click', () => showToast(`Reproduciendo: ${pelicula.nombre}`));
+  if (enLista) {
+    el.querySelector('.btn-eliminar')?.addEventListener('click', () => eliminarDeMiLista(pelicula));
+    el.querySelector('.btn-visto')?.addEventListener('click', () => alternarVisto(pelicula));
   } else {
-    alert("Esta película no está en tu lista.");
+    el.querySelector('.btn-agregar')?.addEventListener('click', () => agregarAMiLista(pelicula));
   }
+
+  // Fallback imagen
+  const img = el.querySelector('.thumb__img');
+  img.onerror = () => placeholderOnError(img);
+
+  return el;
 }
 
-function buscarPeliculas() {
-  const query = searchInput.value.toLowerCase();
-  const peliculas = JSON.parse(localStorage.getItem('catalogo')) || [];
-  const resultados = peliculas.filter(pelicula =>
-    pelicula.nombre.toLowerCase().includes(query) ||
-    pelicula.descripcion.toLowerCase().includes(query)
+// 7) Rail
+function crearRail(titulo, peliculas, opcionesPorNombre = {}) {
+  const rail = document.createElement('section');
+  rail.className = 'rail';
+  rail.setAttribute('role', 'region');
+  rail.setAttribute('aria-label', titulo);
+
+  rail.innerHTML = `
+    <div class="rail__header">
+      <h3 class="rail__title">${titulo}</h3>
+      <!-- dejamos el bloque por si quieres botones ahí en el futuro -->
+      <div class="rail__controls" hidden>
+        <button class="arrow-btn rail-prev" aria-label="Anterior">❮</button>
+        <button class="arrow-btn rail-next" aria-label="Siguiente">❯</button>
+      </div>
+    </div>
+    <div class="rail__track"></div>
+
+    <!-- NUEVO: navegación flotante centrada verticalmente -->
+    <div class="rail__nav" aria-hidden="true">
+      <button class="arrow-btn rail-prev" aria-label="Anterior">❮</button>
+      <button class="arrow-btn rail-next" aria-label="Siguiente">❯</button>
+    </div>
+  `;
+
+  const track  = rail.querySelector('.rail__track');
+  const vistas = getVistas();
+
+  peliculas.forEach(p => {
+    const opts = opcionesPorNombre[p.nombre] || { enLista:false, visto: !!vistas[p.nombre] };
+    track.appendChild( crearThumb(p, opts) );
+  });
+
+  // Navegación
+  const step = () => Math.min(Math.max(track.clientWidth * 0.85, 300), 800);
+  const prevBtns = rail.querySelectorAll('.rail-prev');
+  const nextBtns = rail.querySelectorAll('.rail-next');
+  prevBtns.forEach(b => b.addEventListener('click', () => track.scrollBy({ left: -step(), behavior: 'smooth' })));
+  nextBtns.forEach(b => b.addEventListener('click', () => track.scrollBy({ left:  step(), behavior: 'smooth' })));
+
+  // Scroll con rueda — solo si hay overflow y no estamos en extremos
+  const wheelHandler = (e) => {
+    const { deltaY, deltaX } = e;
+    const canScrollX = track.scrollWidth > track.clientWidth + 1;
+    if (!canScrollX) return;
+    const mostlyY = Math.abs(deltaY) > Math.abs(deltaX);
+    if (!mostlyY) return;
+
+    const atStart = track.scrollLeft <= 0 && deltaY < 0;
+    const atEnd   = track.scrollLeft + track.clientWidth >= track.scrollWidth - 1 && deltaY > 0;
+    if (atStart || atEnd) return;
+
+    e.preventDefault();
+    track.scrollBy({ left: deltaY, behavior: 'smooth' });
+  };
+  track.addEventListener('wheel', wheelHandler, { passive:false });
+
+  // Mostrar/ocultar nav + degradados solo si hay overflow
+  const updateScrollable = () => {
+    const can = track.scrollWidth > track.clientWidth + 1;
+    rail.classList.toggle('is-scrollable', can);
+  };
+  updateScrollable();
+  new ResizeObserver(updateScrollable).observe(track);
+
+  return rail;
+}
+
+
+// 8) Renders
+function renderHomeRails() {
+  if (!contenedor) return;
+  contenedor.innerHTML = '';
+  const pelis = getCatalogo();
+
+  contenedor.appendChild(crearRail('Destacadas', pelis.slice(0, 6)));
+
+  const map = agruparPorGenero(pelis);
+  [...map.keys()].sort().forEach(g => contenedor.appendChild(crearRail(g, map.get(g))));
+}
+function renderMiListaRail() {
+  if (!contenedor) return;
+  contenedor.innerHTML = '';
+  const lista = getMiLista();
+  if (lista.length === 0) {
+    const p = document.createElement('p');
+    p.textContent = 'Tu lista está vacía.';
+    p.style.textAlign = 'center';
+    contenedor.appendChild(p);
+    return;
+  }
+  const opts = {};
+  lista.forEach(p => opts[p.nombre] = { enLista:true, visto:p.visto === true });
+  contenedor.appendChild(crearRail('Mi lista', lista, opts));
+}
+function renderResultados(query) {
+  if (!contenedor) return;
+  contenedor.innerHTML = '';
+  const q = query.trim().toLowerCase();
+  const res = getCatalogo().filter(p => 
+    p.nombre.toLowerCase().includes(q) || p.descripcion.toLowerCase().includes(q)
   );
-  mostrarPeliculas(resultados);
+  if (res.length === 0) {
+    const p = document.createElement('p');
+    p.textContent = 'No hay resultados.';
+    p.style.textAlign = 'center';
+    contenedor.appendChild(p);
+    return;
+  }
+  contenedor.appendChild(crearRail(`Resultados: “${query}”`, res));
 }
 
-miListaButton.addEventListener('click', mostrarMiLista);
-searchButton.addEventListener('click', buscarPeliculas);
-document.getElementById("btn-login").addEventListener("click", function () {
-  alert("Inicio de sesión exitoso.");
-});
+// 9) Lógica lista / visto
+function agregarAMiLista(p) {
+  const lista = getMiLista();
+  const vistas = getVistas();
+  if (lista.some(x => x.nombre === p.nombre)) return showToast("Ya está en tu lista.");
+  setMiLista([...lista, { ...p, visto: !!vistas[p.nombre] }]);
+  showToast("Película agregada a tu lista.");
+}
+function eliminarDeMiLista(p) {
+  setMiLista(getMiLista().filter(x => x.nombre !== p.nombre));
+  showToast("Película eliminada de tu lista.");
+  renderMiListaRail();
+}
+function alternarVisto(p) {
+  const lista = getMiLista();
+  const i = lista.findIndex(x => x.nombre === p.nombre);
+  if (i === -1) return showToast("No está en tu lista.");
+  lista[i].visto = !lista[i].visto;
+  setMiLista(lista);
+  const vistas = getVistas();
+  lista[i].visto ? vistas[p.nombre] = true : delete vistas[p.nombre];
+  setVistas(vistas);
+  renderMiListaRail();
+}
 
-document.addEventListener("DOMContentLoaded", () => {
-  const catalogoGuardado = JSON.parse(localStorage.getItem('catalogo'));
-  if (catalogoGuardado) {
-    mostrarPeliculas(catalogoGuardado);
-  }
+// 10) Búsqueda y arranque
+function buscarPeliculas() {
+  const q = (searchInput?.value || '').trim();
+  if (!q) return renderHomeRails();
+  renderResultados(q.toLowerCase());
+}
+document.addEventListener('DOMContentLoaded', () => {
+  renderHomeRails();
+  miListaBtn?.addEventListener('click', renderMiListaRail);
+  searchBtn?.addEventListener('click', buscarPeliculas);
+  searchInput?.addEventListener('keydown', e => { if (e.key === 'Enter') buscarPeliculas(); });
 });

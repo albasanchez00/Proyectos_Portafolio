@@ -1,110 +1,254 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="title" title="Tienda Aceites">
-    <meta name="odescription" content="Tienda de aceites de oliva y girasol. Descubre la pureza y calidad de nuestros aceites de girasol y oliva, cultivados y extraídos con el máximo cuidado. Ya sea para dar un toque especial a tus comidas o disfrutar de sus beneficios para la salud, aquí encontrarás el aceite perfecto para cada necesidad. ¡Haz tu pedido ahora y lleva a casa lo mejor de la naturaleza!">
-    <meta name="keywords" content="aceite, aceite de oliva, aceite de girasol, aceite de oliva extra virgen, aceite de oliva virgen, aceite de oliva suave, aceite de girasol extra virgen, aceite de girasol natural, aceite de girasol refinado">
-    <meta name="author" content="Tienda Aceites">
-    <meta name="robots" content="index, follow">
-    <title>Tienda Aceites</title>
-    <link rel="stylesheet" href="./css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tienda Aceites</title>
+  <meta name="description" content="Tienda de aceites de oliva y girasol. Calidad, sabor y envío rápido." />
+  <meta name="keywords" content="aceite, oliva, girasol, virgen extra, suave, virgen" />
+  <meta name="author" content="Tienda Aceites" />
+  <link rel="stylesheet" href="./css/style.css" />
 </head>
 <body>
-    <section class="contenedor">
-        <header>
-            <picture class="picture_header"><img src="./assets/logo-tienda-aceite.png" alt="logotipo tienda aceite"></picture>
-            <section class="section_nav">
-                <div class="menu-toggle" id="menu-toggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-                <nav class="nav-cabecera">
-                    <ul class="nav-links" id="nav-links">
-                        <li><a href="./index.html" class="menu">Inicio</a></li>
-                        <li><a href="./productos/aceiteOliva.html" class="menu">Aceite Oliva</a></li>
-                        <li><a href="./productos/aceiteGirasol.html" class="menu">Aceite Girasol</a></li>
-                        <li><a href="#" class="menu">Contacto</a></li>
-                    </ul>
-                </nav>
-            </section>
-        </header>
+  <section class="contenedor">
+    <!-- HEADER -->
+    <header>
+        <picture class="picture_header">
+            <img src="./assets/logo-tienda-aceite.png" alt="Logotipo Tienda Aceites">
+        </picture>
 
-        <main>
-            <section class="section_hero">
-                <div class="hero_content">
-                    <h1>Nuestro Aceite al mejor precio</h1>
-                    <p>¡Bienvenido a nuestra tienda de aceites! Descubre la pureza y calidad de nuestros aceites de girasol y oliva, cultivados y extraídos con el máximo cuidado. Ya sea para dar un toque especial a tus comidas o disfrutar de sus beneficios para la salud, aquí encontrarás el aceite perfecto para cada necesidad. ¡Haz tu pedido ahora y lleva a casa lo mejor de la naturaleza!</p>
-                    <a href="#reserva" class="btn_reserva">Comprar ahora</a>
-                </div>
-            </section>
-            <section id="card-productos">
-                <div>
-                    <picture><img src="./assets/botella-aceite-de-oliva-extra-virgen.png" alt=""></picture>
-                    <h2>Aceite Oliva Extra Virgen</h2>
-                    <p>Extraído en frío para mantener su sabor intenso y sus beneficios saludables. Ideal para ensaladas, pastas y parrilladas.</p>
-                    <a href="./productos/aceiteOliva.html" class="btn_producto">Extra Virgen</a>
-                </div>
-                <div>
-                    <picture><img src="./assets/botella-aceite-de-oliva-natural.png" alt=""></picture>
-                    <h2>Aceite Oliva Suave</h2>
-                    <p>Extraído en frío para mantener su sabor intenso y sus beneficios saludables. Ideal para ensaladas, pastas y parrilladas.</p>
-                    <a href="./productos/aceiteOliva.html" class="btn_producto">Suave</a>
-                </div>
-                <div>
-                    <picture><img src="./assets/botella-de-aceite-de-oliva-virgen.png" alt=""></picture>
-                    <h2>Aceite Oliva Virgen</h2>
-                    <p>De sabor más suave y ligero, perfecto para cocinar y freír sin perder el toque mediterráneo.</p>    
-                    <a href="./productos/aceiteOliva.html" class="btn_producto">Virgen</a>
-                </div>
-                <div>
-                    <picture><img src="./assets/botella-de-aceite-de-girasol-extra-virgen.png" alt=""></picture>
-                    <h2>Aceite Girasol Extra Virgen</h2>
-                    <p>Ideal para realzar el sabor de tus platos, con una textura ligera y una calidad excepcional.</p>
-                    <a href="./productos/aceiteGirasol.html" class="btn_producto">Extra Virgen</a>
-                </div>
-                <div>
-                    <picture><img src="./assets/botella-de-aceite-de-girasol-natural.png" alt=""></picture>
-                    <h2>Aceite Girasol Natural</h2>
-                    <p>Un aceite ligero y de sabor suave, ideal para una alimentación equilibrada. Ideal para freír y hornear.</p>
-                    <a href="./productos/aceiteGirasol.html" class="btn_producto">Natural</a>
-                </div>
-                <div>
-                    <picture><img src="./assets/botella-de-aceite-de-girasol-refinado.png" alt=""></picture>
-                    <h2>Aceite Girasol Refinado</h2>
-                    <p>Suave, versátil y con un alto punto de humo, perfecto para todas tus necesidades culinarias diarias.</p>
-                    <a href="./productos/aceiteGirasol.html" class="btn_producto">Refinado</a>
-                </div>
-            </section>
+        <section class="section_nav">
+            <!-- Botón hamburguesa -->
+            <div class="menu-toggle" id="menu-toggle"
+                aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links" role="button" tabindex="0">
+            <span></span><span></span><span></span>
+            </div>
 
-        </main>
+            <!-- Navegación -->
+            <nav class="nav-cabecera">
+            <ul class="nav-links" id="nav-links" role="menu">
+                <li><a href="./index.html" class="menu" role="menuitem">Inicio</a></li>
+                <li><a href="./productos/aceiteOliva.html" class="menu" role="menuitem">Aceite Oliva</a></li>
+                <li><a href="./productos/aceiteGirasol.html" class="menu" role="menuitem">Aceite Girasol</a></li>
+                <li><a href="#" class="menu" role="menuitem">Contacto</a></li>
+            </ul>
+            </nav>
 
-        <footer>
-            <section class="section_footer">
-                <picture><img src="./assets/logo-tienda-aceite.png" alt="logotipo tienda aceite"></picture>
-                <section class="section_nav_footer">
-                    <nav>
-                        <ul>
-                            <li><a href="./index.html" class="menu">Inicio</a></li>
-                            <li><a href="./vista/futbol.html" class="menu">Aceite Oliva</a></li>
-                            <li><a href="./vista/baloncesto.html" class="menu">Aceite Girasol</a></li>
-                            <li><a href="./vista/contacto.html" class="menu">Contacto</a></li>
-                        </ul>
-                    </nav>
-                </section>
-                <section class="section_nav_politics">
-                    <nav>
-                        <ul>
-                            <li><a href="#">Políticas de uso</a></li>
-                            <li><a href="#">Aviso Legal</a></li>
-                            <li><a href="#">Conocenos</a></li>
-                        </ul>
-                    </nav>
-                </section>
-            </section>
-        </footer>
-    </section>
+            <!-- Acciones: CTA + MiniCart -->
+            <div class="header__actions">
+            <a href="#productos" class="btn_reserva header__cta">Comprar ahora</a>
+
+            <a href="./productos/carrito.html" class="mini-cart-link" aria-label="Ver carrito">
+                <span class="mini-cart-icon" aria-hidden="true">🛒</span>
+                <span id="mini-cart-count" class="mini-cart-badge">0</span>
+                <span id="mini-cart-total" class="mini-cart-total">0,00 €</span>
+            </a>
+            </div>
+        </section>
+
+        <!-- Backdrop para cerrar al pulsar fuera -->
+        <div class="nav-backdrop" id="nav-backdrop" hidden></div>
+
+        <!-- Anunciador accesible -->
+        <div id="cart-announcer" class="visually-hidden" aria-live="polite"></div>
+    </header>
+
+
+    <!-- MAIN -->
+    <main>
+      <!-- HERO -->
+      <section class="section_hero">
+        <div class="hero_content">
+          <h1>Nuestro Aceite al mejor precio</h1>
+          <p>Descubre la pureza y calidad de nuestros aceites de oliva y girasol, cultivados y extraídos con mimo para ofrecerte el mejor sabor en tu mesa.</p>
+          <a href="#productos" class="btn_reserva">Comprar ahora</a>
+        </div>
+      </section>
+
+      <!-- PRODUCTOS -->
+      <section id="productos" class="container">
+        <section id="card-productos" class="grid-products">
+          <!-- AOVE EXTRA -->
+          <article class="product-card">
+              <picture><img loading="lazy" src="./assets/botella-aceite-de-oliva-extra-virgen.png"
+              alt="Aceite de Oliva Virgen Extra 500ml"></picture>
+              <h2 class="product-card__title">AOVE Extra Virgen 500ml</h2>
+              <p class="product-card__desc">Extraído en frío para mantener su sabor y beneficios.</p>
+              
+              <div class="product-card__footer">
+                  <p class="product-card__price" data-price="39.90">39,90 €</p>
+
+                  <label class="product-card__label" for="qty-aove-extra-500">Cantidad</label>
+                  <input id="qty-aove-extra-500" class="product-card__qty" type="number" min="1" value="1" inputmode="numeric">
+
+                  <button class="btn btn--primary add-to-cart"
+                      data-id="SKU-AOVE-EXTRA-500"
+                      data-name="AOVE Extra Virgen 500ml"
+                      data-price="39.90"
+                      data-image="./assets/botella-aceite-de-oliva-extra-virgen.png"
+                      data-url="./productos/aceiteOliva.html"
+                      aria-label="Añadir AOVE Extra Virgen 500ml al carrito">
+                      Añadir al carrito
+                  </button>
+              </div>
+
+          </article>
+
+          <article class="product-card">
+              <picture><img loading="lazy" src="./assets/botella-aceite-de-oliva-natural.png"
+              alt="Aceite de Oliva Suave 500ml"></picture>
+              <h2 class="product-card__title">AOVE Suave 500ml</h2>
+              <p class="product-card__desc">Extraído en frío para mantener su sabor intenso y sus beneficios saludables. Ideal para ensaladas, pastas y parrilladas.</p>
+              <div class="product-card__footer">
+                  <p class="product-card__price" data-price="29.90">29,90 €</p>
+
+                  <label class="product-card__label" for="qty-avoe-suave-500">Cantidad</label>
+                  <input id="qty-avoe-suave-500" class="product-card__qty" type="number" min="1" value="1" inputmode="numeric">
+
+                  <button class="btn btn--primary add-to-cart"
+                  data-id="SKU-AOVE-SUAVE-500"
+                  data-name="AOVE Suave 500ml"
+                  data-price="29.90"
+                  data-image="./assets/botella-aceite-de-oliva-natural.png"
+                  data-url="./productos/aceiteOliva.html"
+                  aria-label="Añadir AOVE Suave 500ml al carrito">
+                  Añadir al carrito
+                  </button>
+              </div>
+          </article>
+
+          <article class="product-card">
+              <picture><img loading="lazy" src="./assets/botella-de-aceite-de-oliva-virgen.png"
+              alt="Aceite de Oliva Suave 500ml"></picture>
+              <h2 class="product-card__title">AOVE Virgen 500ml</h2>
+              <p class="product-card__desc">De sabor más suave y ligero, perfecto para cocinar y freír sin perder el toque mediterráneo.</p>
+              <div class="product-card__footer">
+                  <p class="product-card__price" data-price="9.90">9,90 €</p>
+
+                  <label class="product-card__label" for="qty-avoe-virgen-500">Cantidad</label>
+                  <input id="qty-avoe-virgen-500" class="product-card__qty" type="number" min="1" value="1" inputmode="numeric">
+
+                  <button class="btn btn--primary add-to-cart"
+                  data-id="SKU-AOVE-VIRGEN-500"
+                  data-name="AOVE Virgen 500ml"
+                  data-price="9.90"
+                  data-image="./assets/botella-de-aceite-de-oliva-virgen.png"
+                  data-url="./productos/aceiteOliva.html"
+                  aria-label="Añadir AOVE Suave 500ml al carrito">
+                  Añadir al carrito
+                  </button>
+              </div>
+          </article>
+
+          <!-- GIRASOL EXTRA -->
+          <article class="product-card">
+                    <picture><img loading="lazy" src="./assets/botella-de-aceite-de-girasol-extra-virgen.png"
+                    alt="Aceite Girasol Extra Virgen 500ml"></picture>
+                    <h2 class="product-card__title">Aceite Girasol Extra Virgen 500ml</h2>
+                    <p class="product-card__desc">Ideal para realzar el sabor de tus platos, con una textura ligera y una calidad excepcional.</p>
+                    <div class="product-card__footer">
+                        <p class="product-card__price" data-price="6.90">6,90 €</p>  <!-- o 39,90 si es tu precio real -->
+
+                        <label class="product-card__label" for="qty-girasol-extra-500">Cantidad</label>
+                        <input id="qty-girasol-extra-500" class="product-card__qty" type="number" min="1" value="1" inputmode="numeric">
+
+                        <button class="btn btn--primary add-to-cart"
+                            data-id="SKU-GIRASOL-EXTRA-500"
+                            data-name="Aceite Girasol Extra Virgen 500ml"
+                            data-price="39.90" 
+                            data-image="./assets/botella-de-aceite-de-girasol-extra-virgen.png"
+                            data-url="./productos/aceiteGirasol.html"
+                            aria-label="Añadir Aceite Girasol Extra Virgen 500ml al carrito">
+                            Añadir al carrito
+                        </button>
+                    </div>
+
+                </article>
+
+                <article class="product-card">
+                    <picture><img loading="lazy" src="./assets/botella-de-aceite-de-girasol-natural.png"
+                    alt="Aceite Girasol Natural 500ml"></picture>
+                    <h2 class="product-card__title">Aceite Girasol Natural 500ml</h2>
+                    <p class="product-card__desc">Un aceite ligero y de sabor suave, ideal para una alimentación equilibrada. Ideal para freír y hornear.</p>
+                    <div class="product-card__footer">
+                        <p class="product-card__price" data-price="29.90">29,90 €</p>
+
+                        <label class="product-card__label" for="qty-gir-natural-500">Cantidad</label>
+                        <input id="qty-gir-natural-500" class="product-card__qty" type="number" min="1" value="1" inputmode="numeric">
+
+                        <button class="btn btn--primary add-to-cart"
+                            data-id="SKU-GIRASOL-NATURAL-500"
+                            data-name="Aceite Girasol Natural 500ml"
+                            data-price="29.90"
+                            data-image="./assets/botella-de-aceite-de-girasol-natural.png"
+                            data-url="./productos/aceiteGirasol.html"
+                            aria-label="Añadir Aceite Girasol Natural 500ml al carrito">
+                            Añadir al carrito
+                        </button>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <picture><img loading="lazy" src="./assets/botella-de-aceite-de-girasol-refinado.png"
+                    alt="Aceite Girasol Refinado 500ml"></picture>
+                    <h2 class="product-card__title">Aceite Girasol Refinado 500ml</h2>
+                    <p class="product-card__desc">Suave, versátil y con un alto punto de humo, perfecto para todas tus necesidades culinarias diarias.</p>
+                    <div class="product-card__footer">
+                        <p class="product-card__price" data-price="9.90">9,90 €</p>
+
+                        <label class="product-card__label" for="qty-gir-refinado-500">Cantidad</label>
+                        <input id="qty-gir-refinado-500" class="product-card__qty" type="number" min="1" value="1" inputmode="numeric">
+
+                        <button class="btn btn--primary add-to-cart"
+                            data-id="SKU-GIRASOL-REFINADO-500"
+                            data-name="Aceite Girasol Refinado 500ml"
+                            data-price="9.90"
+                            data-image="./assets/botella-de-aceite-de-girasol-refinado.png"
+                            data-url="./productos/aceiteGirasol.html"
+                            aria-label="Añadir Aceite Girasol Refinado 500ml al carrito">
+                            Añadir al carrito
+                        </button>
+                    </div>
+                </article> 
+        </section>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <section class="section_footer">
+        <picture><img src="./assets/logo-tienda-aceite.png" alt="logotipo tienda aceite"></picture>
+        <section class="section_nav_footer">
+          <nav>
+            <ul>
+              <li><a href="./index.html" class="menu">Inicio</a></li>
+              <li><a href="./productos/aceiteOliva.html" class="menu">Aceite Oliva</a></li>
+              <li><a href="./productos/aceiteGirasol.html" class="menu">Aceite Girasol</a></li>
+              <li><a href="#" class="menu">Contacto</a></li>
+            </ul>
+          </nav>
+        </section>
+        <section class="section_nav_politics">
+          <nav>
+            <ul>
+              <li><a href="#">Políticas de uso</a></li>
+              <li><a href="#">Aviso Legal</a></li>
+              <li><a href="#">Conócenos</a></li>
+            </ul>
+          </nav>
+        </section>
+      </section>
+    </footer>
+  </section>
+
+  <!-- Scripts propios -->
+  <script src="./js/script.js"></script>
+
+  <!-- Carrito (módulos) -->
+  <script type="module">
+    import './js/format.js';
+    import './js/cart.js';
+    import './js/ui-cart.js';
+  </script>
 </body>
 </html>

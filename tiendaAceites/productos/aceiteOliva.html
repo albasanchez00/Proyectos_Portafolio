@@ -3,29 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Tienda de Aceites - Aceite de Oliva Virgen Extra, Aceite de Girasol y más. Compra online aceites de alta calidad. Envío rápido y seguro.">
+    <meta name="keywords" content="Aceite de Oliva, Aceite de Oliva Extra, Tienda de Aceites, Comprar Aceite Online, Aceite Virgen Extra, Aceite Saludable">
+    <meta name="author" content="Alba Sánchez Olmedo">
+    <title>Aceite Oliva</title>
     <link rel="stylesheet" href="../css/style.css">
-    <script src="../js/script.js"></script>
 </head>
 <body>
     <section class="contenedor">
         <header>
-            <picture class="picture_header"><img src="../assets/logo-tienda-aceite.png" alt="logotipo tienda aceite"></picture>
+            <picture class="picture_header">
+                <img src="../assets/logo-tienda-aceite.png" alt="Logotipo Tienda Aceites">
+            </picture>
+
             <section class="section_nav">
-                <div class="menu-toggle" id="menu-toggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                <!-- Botón hamburguesa -->
+                <div class="menu-toggle" id="menu-toggle"
+                    aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links" role="button" tabindex="0">
+                <span></span><span></span><span></span>
                 </div>
+
+                <!-- Navegación -->
                 <nav class="nav-cabecera">
-                    <ul class="nav-links" id="nav-links">
-                        <li><a href="../index.html" class="menu">Inicio</a></li>
-                        <li><a href="./aceiteOliva.html" class="menu">Aceite Oliva</a></li>
-                        <li><a href="./aceiteGirasol.html" class="menu">Aceite Girasol</a></li>
-                        <li><a href="#" class="menu">Contacto</a></li>
-                    </ul>
+                <ul class="nav-links" id="nav-links" role="menu">
+                    <li><a href="../index.html" class="menu" role="menuitem">Inicio</a></li>
+                    <li><a href="./aceiteOliva.html" class="menu" role="menuitem">Aceite Oliva</a></li>
+                    <li><a href="./aceiteGirasol.html" class="menu" role="menuitem">Aceite Girasol</a></li>
+                    <li><a href="#" class="menu" role="menuitem">Contacto</a></li>
+                </ul>
                 </nav>
+
+                <!-- Acciones: CTA + MiniCart -->
+                <div class="header__actions">
+                <a href="#productos" class="btn_reserva header__cta">Comprar ahora</a>
+
+                <a href="./carrito.html" class="mini-cart-link" aria-label="Ver carrito">
+                    <span class="mini-cart-icon" aria-hidden="true">🛒</span>
+                    <span id="mini-cart-count" class="mini-cart-badge">0</span>
+                    <span id="mini-cart-total" class="mini-cart-total">0,00 €</span>
+                </a>
+                </div>
             </section>
+
+            <!-- Backdrop para cerrar al pulsar fuera -->
+            <div class="nav-backdrop" id="nav-backdrop" hidden></div>
+
+            <!-- Anunciador accesible -->
+            <div id="cart-announcer" class="visually-hidden" aria-live="polite"></div>
         </header>
 
         <main>
@@ -36,45 +61,80 @@
                     <p>Perfecto tanto para uso en crudo como en cocina, su aroma afrutado y su sabor suave con ligeros toques amargos y picantes lo convierten en el complemento ideal para ensaladas, carnes, pescados y platos tradicionales.</p>
                 </div>
             </section>
-            <section id="card-productos">
-                <div>
-                    <picture><img src="../assets/botella-aceite-de-oliva-extra-virgen.png" alt=""></picture>
-                    <h2>Aceite Oliva Extra Virgen</h2>
-                    <p>Extraído en frío para mantener su sabor intenso y sus beneficios saludables. Ideal para ensaladas, pastas y parrilladas.</p>
-                    <a href="./aceiteOliva.html" class="btn_producto">Extra Virgen</a>
-                </div>
-                <div>
-                    <picture><img src="../assets/botella-aceite-de-oliva-natural.png" alt=""></picture>
-                    <h2>Aceite Oliva Suave</h2>
-                    <p>Extraído en frío para mantener su sabor intenso y sus beneficios saludables. Ideal para ensaladas, pastas y parrilladas.</p>
-                    <a href="./aceiteOliva.html" class="btn_producto">Suave</a>
-                </div>
-                <div>
-                    <picture><img src="../assets/botella-de-aceite-de-oliva-virgen.png" alt=""></picture>
-                    <h2>Aceite Oliva Virgen</h2>
-                    <p>De sabor más suave y ligero, perfecto para cocinar y freír sin perder el toque mediterráneo.</p>    
-                    <a href="./aceiteOliva.html" class="btn_producto">Virgen</a>
-                </div>
-                <div>
-                    <picture><img src="../assets/botella-aceite-de-oliva-extra-virgen.png" alt=""></picture>
-                    <h2>Aceite Oliva Extra Virgen</h2>
-                    <p>Extraído en frío para mantener su sabor intenso y sus beneficios saludables. Ideal para ensaladas, pastas y parrilladas.</p>
-                    <a href="./aceiteOliva.html" class="btn_producto">Extra Virgen</a>
-                </div>
-                <div>
-                    <picture><img src="../assets/botella-aceite-de-oliva-natural.png" alt=""></picture>
-                    <h2>Aceite Oliva Suave</h2>
-                    <p>Extraído en frío para mantener su sabor intenso y sus beneficios saludables. Ideal para ensaladas, pastas y parrilladas.</p>
-                    <a href="./aceiteOliva.html" class="btn_producto">Suave</a>
-                </div>
-                <div>
-                    <picture><img src="../assets/botella-de-aceite-de-oliva-virgen.png" alt=""></picture>
-                    <h2>Aceite Oliva Virgen</h2>
-                    <p>De sabor más suave y ligero, perfecto para cocinar y freír sin perder el toque mediterráneo.</p>    
-                    <a href="./aceiteOliva.html" class="btn_producto">Virgen</a>
-                </div>
-            </section>
+            <section id="card-productos" class="grid-products">
+                <!-- Anunciador accesible para “añadido al carrito” -->
+                <div id="cart-announcer" class="visually-hidden" aria-live="polite"></div>
+                <article class="product-card">
+                    <picture><img loading="lazy" src="../assets/botella-aceite-de-oliva-extra-virgen.png"
+                    alt="Aceite de Oliva Virgen Extra 500ml"></picture>
+                    <h2 class="product-card__title">AOVE Extra Virgen 500ml</h2>
+                    <p class="product-card__desc">Extraído en frío para mantener su sabor y beneficios.</p>
+                    
+                    <div class="product-card__footer">
+                        <p class="product-card__price" data-price="39.90">39,90 €</p>
 
+                        <label class="product-card__label" for="qty-aove-extra-500">Cantidad</label>
+                        <input id="qty-aove-extra-500" class="product-card__qty" type="number" min="1" value="1" inputmode="numeric">
+
+                        <button class="btn btn--primary add-to-cart"
+                            data-id="SKU-AOVE-EXTRA-500"
+                            data-name="AOVE Extra Virgen 500ml"
+                            data-price="39.90"
+                            data-image="../assets/botella-aceite-de-oliva-extra-virgen.png"
+                            data-url="./aceiteOliva.html"
+                            aria-label="Añadir AOVE Extra Virgen 500ml al carrito">
+                            Añadir al carrito
+                        </button>
+                    </div>
+
+                </article>
+
+                <article class="product-card">
+                    <picture><img loading="lazy" src="../assets/botella-aceite-de-oliva-natural.png"
+                    alt="Aceite de Oliva Suave 500ml"></picture>
+                    <h2 class="product-card__title">AOVE Suave 500ml</h2>
+                    <p class="product-card__desc">Extraído en frío para mantener su sabor intenso y sus beneficios saludables. Ideal para ensaladas, pastas y parrilladas.</p>
+                    <div class="product-card__footer">
+                        <p class="product-card__price" data-price="29.90">29,90 €</p>
+
+                        <label class="product-card__label" for="qty-avoe-suave-500">Cantidad</label>
+                        <input id="qty-avoe-suave-500" class="product-card__qty" type="number" min="1" value="1" inputmode="numeric">
+
+                        <button class="btn btn--primary add-to-cart"
+                        data-id="SKU-AOVE-SUAVE-500"
+                        data-name="AOVE Suave 500ml"
+                        data-price="29.90"
+                        data-image="../assets/botella-aceite-de-oliva-natural.png"
+                        data-url="./aceiteOliva.html"
+                        aria-label="Añadir AOVE Suave 500ml al carrito">
+                        Añadir al carrito
+                        </button>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <picture><img loading="lazy" src="../assets/botella-de-aceite-de-oliva-virgen.png"
+                    alt="Aceite de Oliva Suave 500ml"></picture>
+                    <h2 class="product-card__title">AOVE Virgen 500ml</h2>
+                    <p class="product-card__desc">De sabor más suave y ligero, perfecto para cocinar y freír sin perder el toque mediterráneo.</p>
+                    <div class="product-card__footer">
+                        <p class="product-card__price" data-price="9.90">9,90 €</p>
+
+                        <label class="product-card__label" for="qty-avoe-virgen-500">Cantidad</label>
+                        <input id="qty-avoe-virgen-500" class="product-card__qty" type="number" min="1" value="1" inputmode="numeric">
+
+                        <button class="btn btn--primary add-to-cart"
+                        data-id="SKU-AOVE-VIRGEN-500"
+                        data-name="AOVE Virgen 500ml"
+                        data-price="9.90"
+                        data-image="../assets/botella-de-aceite-de-oliva-virgen.png"
+                        data-url="./aceiteOliva.html"
+                        aria-label="Añadir AOVE Suave 500ml al carrito">
+                        Añadir al carrito
+                        </button>
+                    </div>
+                </article> 
+            </section>
         </main>
 
         <footer>
@@ -102,5 +162,11 @@
             </section>
         </footer>
     </section>
+    <script type="module">
+        import '../js/script.js';
+        import '../js/format.js';
+        import '../js/cart.js';
+        import '../js/ui-cart.js';
+    </script>
 </body>
 </html>

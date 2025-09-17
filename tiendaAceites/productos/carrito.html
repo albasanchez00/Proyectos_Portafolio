@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Carrito</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <section class="contenedor">
+    <header>
+      <picture class="picture_header">
+        <img src="../assets/logo-tienda-aceite.png" alt="Logotipo Tienda Aceites">
+      </picture>
+
+      <section class="section_nav">
+        <div class="menu-toggle" id="menu-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links" role="button" tabindex="0">
+          <span></span><span></span><span></span>
+        </div>
+        <nav class="nav-cabecera">
+          <ul class="nav-links" id="nav-links" role="menu">
+            <li><a href="../index.html" class="menu" role="menuitem">Inicio</a></li>
+            <li><a href="./aceiteOliva.html" class="menu" role="menuitem">Aceite Oliva</a></li>
+            <li><a href="./aceiteGirasol.html" class="menu" role="menuitem">Aceite Girasol</a></li>
+            <li><a href="#" class="menu" role="menuitem">Contacto</a></li>
+          </ul>
+        </nav>
+
+        <div class="header__actions">
+          <a href="../index.html#productos" class="btn_reserva header__cta">Comprar ahora</a>
+          <a href="./carrito.html" class="mini-cart-link" aria-label="Ver carrito">
+            <span class="mini-cart-icon" aria-hidden="true">🛒</span>
+            <span id="mini-cart-count" class="mini-cart-badge">0</span>
+            <span id="mini-cart-total" class="mini-cart-total">0,00 €</span>
+          </a>
+        </div>
+      </section>
+
+      <div class="nav-backdrop" id="nav-backdrop" hidden></div>
+      <div id="cart-announcer" class="visually-hidden" aria-live="polite"></div>
+    </header>
+
+    <main class="cart">
+      <h1 class="cart__title">Tu carrito</h1>
+
+      <!-- Estado vacío -->
+      <div id="cart-empty" class="cart-empty" hidden>
+        <p>Tu carrito está vacío.</p>
+        <a href="../index.html#productos" class="btn btn--primary" style="max-width:220px">Ir a comprar</a>
+      </div>
+
+      <!-- Layout principal -->
+      <section class="cart__layout">
+        <!-- Lista de productos -->
+        <section class="cart__items" aria-label="Productos en el carrito">
+          <header class="cart__head">
+            <span>Producto</span>
+            <span class="right">Precio</span>
+            <span class="right">Cantidad</span>
+            <span class="right">Subtotal</span>
+            <span class="right"></span>
+          </header>
+          <ul id="cart-list" class="cart-list" aria-live="polite" aria-relevant="all"></ul>
+        </section>
+
+        <!-- Resumen -->
+        <aside class="cart__summary" aria-label="Resumen del pedido">
+          <div id="summary-box" class="summary-box"></div>
+          <a href="./checkout.html" id="checkout-btn" class="btn btn--primary summary__cta" aria-disabled="true">Finalizar compra</a>
+          <p class="summary__note">Pedido seguro. Envíos gratis desde 50 €.</p>
+        </aside>
+      </section>
+    </main>
+
+    <footer>
+      <section class="section_footer">
+        <picture><img src="../assets/logo-tienda-aceite.png" alt="logotipo tienda aceite"></picture>
+        <section class="section_nav_footer">
+          <nav>
+            <ul>
+              <li><a href="../index.html" class="menu">Inicio</a></li>
+              <li><a href="./aceiteOliva.html" class="menu">Aceite Oliva</a></li>
+              <li><a href="./aceiteGirasol.html" class="menu">Aceite Girasol</a></li>
+              <li><a href="#" class="menu">Contacto</a></li>
+            </ul>
+          </nav>
+        </section>
+        <section class="section_nav_politics">
+          <nav>
+            <ul>
+              <li><a href="#">Políticas de uso</a></li>
+              <li><a href="#">Aviso Legal</a></li>
+              <li><a href="#">Conócenos</a></li>
+            </ul>
+          </nav>
+        </section>
+      </section>
+    </footer>
+  </section>
+  <script src="../js/script.js"></script>
+  <script type="module">
+    import '../js/format.js';
+    import { mountCartTable } from '../js/ui-cart.js';
+    mountCartTable();
+  </script>
+  <script type="module">
+    import { getCart, updateQty, removeItem, subscribe, getTotals } from '../js/cart.js';
+    import { money } from '../js/format.js';
+
+    const list = document.getElementById('cart-list');
+    const summaryBox = document.getElementById('summary-box');
+    const checkoutBtn = document.getElementById('checkout-btn');
+    const emptyState = document.getElementById('cart-empty');
+
+    function rowTemplate(it){
+      const subtotal = it.price * it.qty;
+      return `
+        <li class="cart-item">
+          <div class="cart-item__product">
+            <img src="${it.image}" alt="" width="64" height="64" loading="lazy">
+            <div>
+              <a href="${it.url ?? '#'}" class="cart-item__title">${it.name}</a>
+              <p class="cart-item__sku">SKU: ${it.id}</p>
+            </div>
+          </div>
+
+          <div class="right">${money(it.price)}</div>
+
+          <div class="right">
+            <input type="number" min="1" value="${it.qty}" class="cart-qty" data-id="${it.id}" aria-label="Cantidad de ${it.name}">
+          </div>
+
+          <div class="right"><strong>${money(subtotal)}</strong></div>
+
+          <div class="right">
+            <button class="cart-remove" data-id="${it.id}" aria-label="Quitar ${it.name}">✕</button>
+          </div>
+        </li>`;
+    }
+
+    function render(){
+      const cart = getCart();
+      const hasItems = cart.items.length > 0;
+      emptyState.hidden = hasItems;
+
+      if (!hasItems){
+        list.innerHTML = '';
+        summaryBox.innerHTML = `
+          <p>Subtotal: <strong>${money(0)}</strong></p>
+          <p>Envío: <strong>Gratis</strong></p>
+          <p>Impuestos (10%): <strong>${money(0)}</strong></p>
+          <p class="summary__total">Total: <strong>${money(0)}</strong></p>`;
+        checkoutBtn.setAttribute('aria-disabled', 'true');
+        checkoutBtn.classList.add('is-disabled');
+        return;
+      }
+
+      list.innerHTML = cart.items.map(rowTemplate).join('');
+
+      const t = getTotals();
+      summaryBox.innerHTML = `
+        <p>Subtotal: <strong>${money(t.subtotal)}</strong></p>
+        <p>Envío: <strong>${t.envio === 0 ? 'Gratis' : money(t.envio)}</strong></p>
+        <p>Impuestos (10%): <strong>${money(t.impuestos)}</strong></p>
+        <p class="summary__total">Total: <strong>${money(t.total)}</strong></p>`;
+
+      checkoutBtn.removeAttribute('aria-disabled');
+      checkoutBtn.classList.remove('is-disabled');
+    }
+
+    // Delegación: actualizar cantidades y eliminar
+    document.addEventListener('input', (e) => {
+      const input = e.target.closest('.cart-qty');
+      if (!input) return;
+      const qty = Math.max(1, Number(input.value) || 1);
+      updateQty(input.dataset.id, qty);
+    });
+
+    document.addEventListener('click', (e) => {
+      const btn = e.target.closest('.cart-remove');
+      if (!btn) return;
+      removeItem(btn.dataset.id);
+    });
+
+    render();
+    subscribe(render);
+  </script>
+</body>
+</html>
