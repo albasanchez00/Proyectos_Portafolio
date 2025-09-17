@@ -291,6 +291,7 @@ main{
   border:none; border-radius:5px; font-size:1rem; transition:background-color .3s ease;
 }
 .btn_producto:hover{ background:#e4c82b; cursor:pointer; color:#080808; text-decoration:none; }
+
 /* FIN INDEX */
 
 
@@ -369,6 +370,116 @@ main{
   #card-productos.grid-products{ gap:16px; width:92vw; }
 }
 /* FIN PAGINA ACEITE OLIVA */
+
+/* ====== SECCIONES DE CATÁLOGO ====== */
+.container{ width:min(1200px, 95vw); margin-inline:auto; }
+.catalog-section{ margin: 24px 0 40px; }
+.catalog-header{
+  display:flex; align-items:center; justify-content:space-between;
+  margin-bottom: 8px;
+}
+.catalog-header h2{ margin:0; font-size:1.6rem; }
+.catalog-link{ color: var(--color_primario); font-weight:600; }
+.catalog-link:hover{ text-decoration: underline; }
+
+/* Afinado de títulos de tarjeta dentro del grid */
+#card-productos.grid-products .product-card__title,
+.grid-products .product-card__title{ margin-top: 8px; }
+
+/* ====== CTA ====== */
+.cta-band{
+  margin: 24px 0 40px;
+  background-image: url('../assets/banner-aceite.png');
+  background-size: cover; background-position: top; background-repeat: no-repeat;
+  border-radius: 16px;
+  padding: 28px 18px;
+}
+.cta-band__content{
+  width:min(1150px, 96vw); height: 400px; margin-inline:auto; text-align:center;
+  display:flex; flex-direction:column; justify-content:center; align-items:center;
+
+}
+.cta-band h2{ margin:0 0 .25rem; }
+.cta-band p{ margin:.25rem 0 .75rem; }
+.cta-band .btn{
+  max-width: 220px; font-size:1.1rem; padding:12px 0;
+  background: var(--color_secundario); color:#080808;
+}
+.cta-band .btn:hover{ background: var(--color_primario); }
+
+/* ====== TESTIMONIOS ====== */
+.testimonials{ width:min(1200px,95vw); margin: 0 auto 56px; 
+  padding: 0 0 8px;
+  display: flex; flex-direction: column; align-items: center;
+  text-align: center;}
+.testimonials h2{ margin:0 0 12px; font-size:1.4rem; }
+.testimonials__track{
+  display:grid; grid-auto-flow: column; grid-auto-columns: min(340px, 84vw);
+  gap: 14px; overflow-x: auto; padding-bottom: 6px;
+  scroll-snap-type: x mandatory; scroll-padding: 8px;
+}
+.testimonials__track:focus{ outline: 2px solid var(--color_secundario); outline-offset: 2px; }
+.testimonial{
+  scroll-snap-align: start;
+  background:#fff; border:1px solid #eee; border-radius: 14px; padding: 16px;
+  box-shadow: 0 4px 14px rgba(0,0,0,.06);
+}
+.testimonial__text{ margin:0 0 .5rem; font-style: italic; }
+.testimonial__author{ margin:0; color:#555; font-weight: 600; text-align:right; }
+
+/* === GRID/TARJETAS (MODERNO) — POR CLASE === */
+.grid-products{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  padding: 20px 0;
+  width: min(1200px, 95vw);
+  margin-inline: auto;
+  align-items: start;
+}
+
+/* Tarjeta */
+.grid-products .product-card{
+  display: flex; flex-direction: column; height: 100%;
+  background: var(--color_blanco);
+  border-radius: 12px; box-shadow: 0 0 10px rgba(0,0,0,.08);
+  padding: 16px; transition: box-shadow .2s ease;
+}
+.grid-products .product-card:hover{ box-shadow: 0 6px 18px rgba(0,0,0,.12); }
+
+/* Imagen con marco estable */
+.grid-products .product-card picture{
+  display: block; width: 100%; aspect-ratio: 3/4;
+  background: #f9f9f9; border-radius: 10px; overflow: hidden; margin-bottom: 12px;
+}
+.grid-products .product-card picture img{
+  width: 100%; height: 100%; object-fit: contain; display: block;
+}
+
+/* Texto */
+.grid-products .product-card__title{ font-size: 1.1rem; color: #080808; margin: 4px 0 6px; }
+.grid-products .product-card__desc{ font-size: .98rem; color: #080808; margin: 0 0 10px; text-align: left; }
+
+/* Footer alineado abajo */
+.grid-products .product-card__footer{
+  margin-top: auto;
+  display: grid; grid-template-columns: 1fr; row-gap: .5rem;
+}
+
+/* Precio y cantidad */
+.grid-products .product-card__price{ font-weight: 700; margin: 0; line-height: 1.2; }
+.grid-products .product-card__label{ font-size: .9rem; margin-bottom: 2px; }
+.grid-products .product-card__qty{
+  width: 100%; max-width: 140px; padding: 8px 10px;
+  border: 1px solid #ddd; border-radius: 8px; appearance: textfield;
+}
+.grid-products .product-card__qty::-webkit-outer-spin-button,
+.grid-products .product-card__qty::-webkit-inner-spin-button{ -webkit-appearance:none; margin:0; }
+
+/* Responsive fino */
+@media (max-width: 480px){
+  .grid-products{ gap: 16px; width: 92vw; }
+}
 
 
 /* INICIO PAGINA CARRITO */
