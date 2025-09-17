@@ -12,7 +12,7 @@
     <li><a href="/proyectoAdidas/index.php">Ver Adidas</a></li>
     <li><a href="/proyectoCepa/index.php">Ver Cepa</a></li>
     <li><a href="/tiendaAceites/index.html">Ver Tienda Aceite</a></li>
-    <li><a href="/filmoteca/index.php">Ver Filmoteca</a></li>
+    <li><a href="/filmoteca/index.html">Ver Filmoteca</a></li>
     <li><a href="/proyectoBanca/index.php">Ver Banca Online</a></li>
   </ul>
 </body>
